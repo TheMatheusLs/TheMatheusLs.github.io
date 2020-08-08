@@ -116,7 +116,7 @@ p {
     margin-left: 3px;
 }
 @media (max-width: 600px){
-    
+
 }
 
 @media (max-width: 600px){
@@ -266,7 +266,10 @@ p {
     }
       
     .social_midia ul li a img {
-        height: 52px;
+        height: 56px;
+    }
+    .social_midia>ul>li:last-child>a {
+        padding-right: 0px;
     }
 
     .baner_content{
