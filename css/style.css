@@ -29,7 +29,7 @@ p {
 }
 
 .main_container {
-    position: relative;
+    position: fixed;
 }
 
 .navbar {
@@ -44,6 +44,7 @@ p {
 }
   
 .navbar .logo a {
+    margin-top: 8px;
     height: 50px;
     background-color: white;
     display: block;
@@ -83,6 +84,7 @@ p {
     justify-content: center;
     align-items: center;
     height: 900px;
+    transform: scale(0.8,0.8);
 }
   
 .social_midia {
@@ -112,4 +114,191 @@ p {
     line-height: 100%;
     margin-top: -30px;
     margin-left: 3px;
+}
+@media (max-width: 600px){
+    
+}
+
+@media (max-width: 600px){
+
+    .navbar{
+        height: auto;
+        justify-content: unset;
+        margin-top: 6%;
+        position: fixed;
+      }
+    
+      .navbar ul {
+        visibility: hidden;
+        width: 0;
+      }
+  
+      .navbar .logo a {
+          padding-left: 100%;
+      }
+
+      
+    .social_midia ul li {
+        display: inline;
+    }
+
+    .social_midia ul li a{
+        padding-right: 15px;
+        display: inline-block;
+    }
+      
+    .social_midia ul li a img {
+        height: 77px;
+    }
+
+    .baner_content{
+        display: block;
+        justify-content: center;
+        align-items: center;
+        height: 800px;
+        margin: 0;
+        padding: 0;
+        padding-top: 200px;
+    }
+
+    .name h1 {
+        font-size: 110px;
+        line-height: 100%;
+    }
+
+    .name h2 {
+        font-size: 30px;
+        line-height: 100%;
+        margin-top: -5px;
+        margin-left: 1px;
+    }
+
+    .banner_image{
+        background-position: top center;
+        padding: 0;
+    }
+  
+  }
+
+
+@media screen and (max-width: 500px ){
+    .navbar{
+      height: auto;
+      justify-content: unset;
+      margin-top: 6%;
+      position: fixed;
+    }
+  
+    .navbar ul {
+      visibility: hidden;
+      width: 0;
+    }
+
+    .navbar .logo a {
+        padding-left: 100%;
+    }
+
+    .social_midia ul li {
+        display: inline;
+    }
+
+    .social_midia ul li a{
+        padding-right: 15px;
+        display: inline-block;
+    }
+      
+    .social_midia ul li a img {
+        height: 60px;
+    }
+
+    .baner_content{
+        display: block;
+        justify-content: center;
+        align-items: center;
+        height: 800px;
+        margin: 0;
+        padding: 0;
+        padding-top: 200px;
+    }
+
+    .name h1 {
+        font-size: 90px;
+        line-height: 100%;
+    }
+
+    .name h2 {
+        font-size: 30px;
+        line-height: 100%;
+        margin-top: -5px;
+        margin-left: 1px;
+    }
+
+    .banner_image{
+        background-position: top center;
+        padding: 0;
+    }
+      
+    
+}
+
+@media (max-width: 400px){
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: none;
+    }
+    .navbar ul {
+      visibility: hidden;
+    }
+
+    .navbar .logo a {
+        padding-left: 100%;
+    }
+
+    .social_midia ul li {
+        display: inline;
+    }
+
+    .social_midia ul li a{
+        padding-right: 15px;
+        display: inline-block;
+    }
+      
+    .social_midia ul li a img {
+        height: 52px;
+    }
+
+    .baner_content{
+        display: block;
+        justify-content: center;
+        align-items: top;
+        height: 800px;
+        margin: 0;
+        padding: 0;
+        padding-top: 200px;
+    }
+
+    .name h1 {
+        font-size: 85px;
+        line-height: 100%;
+    }
+
+    .name h2 {
+        font-size: 25px;
+        line-height: 100%;
+        margin-top: -5px;
+        margin-left: 1px;
+    }
+
+    .banner_image{
+        background-position: top center;
+        padding: 0;
+    }
+}
+
+@media (max-width: 357px){
+    .social_midia ul li a img {
+        height: 40px;
+    }
 }
