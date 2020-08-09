@@ -47,13 +47,6 @@ p {
     z-index:10
 }
 
-/* no*/
-.navbar:after{
-    content: '';
-    clear: both;
-    display: table;
-}
-
 .navbar .container {
     width: 90%;
     margin: 0 auto;
@@ -98,6 +91,27 @@ p {
     font-weight: 600;
 }
 
+.navbar .icon_menu label img {
+    margin: 10px;
+    height: 40px;
+    float: left;
+}
+
+.icon_menu {
+    height: 60px;
+    position: absolute;
+    color: #000E3E;
+    right: 12px;
+    visibility: hidden;
+}
+
+.icon_menu input {
+    float: right;
+    /*visibility: hidden;*/
+}
+
+
+
 /************* Banner ************/
 .baner_content {
     display: flex;
@@ -137,13 +151,26 @@ p {
 }
 
 .footer {
-    background-color: black
+    background-color: #021718;
+    bottom: 0px;
+    width: 100%;
+    padding: 0 10%;
+
 }
 
+.footer .container {
+    width: 90%;
+    padding-top: 20px;
+    margin-top:20px;
+    margin-bottom: 20px;
+}
 
-/* */
+.footer .year {
+    padding-bottom:20px;
+    text-align: center
+}
 
-@media all and (max-width: 850px){
+@media all and (max-width: 750px){
     .navbar {
         overflow: hidden;
         background-color: #FFFFFA;
@@ -156,6 +183,11 @@ p {
     .navbar .navbar_items ul {
         margin-right: 0px;
         float: right;
+        display: none;
+    }
+
+    #btn:checked + .navbar .navbar_items ul{
+        display: block;
     }
 
     .navbar .navbar_items li {
@@ -171,125 +203,62 @@ p {
     }
 
     .navbar .logo {
-        width: 100%;
+        width: 80%;
     }
-}
 
-/* Em 630 o itens do menu devem aparecer*/
-
-/*
-@media (max-width: 600px){
-
-}
-
-@media (max-width: 600px){
-
-    .navbar{
-        height: auto;
-        justify-content: unset;
-        margin-top: 6%;
-        position: fixed;
+    .navbar .icon_menu {
+        width: 50%;
+        float: right;
+        width: 80px;
+        line-height: 60px;
+        text-align: center;
     }
-    
-      .navbar ul {
+
+    .navbar .icon_menu img{
+        margin: 12px 12px 12px 12px;
+        height: 40px;
+    }
+
+    .icon_menu {
+        visibility: visible;
+    }
+
+    .icon_menu input{
         visibility: hidden;
-        width: 0;
-    }
-  
-      .navbar .logo a {
-          padding-left: 100%;
     }
 
-      
-    .social_midia ul li {
-        display: inline;
+    .name h2 and .name h1{
+        font-size: 15px
     }
-
-    .social_midia ul li a{
-        padding-right: 15px;
-        display: inline-block;
-    }
-      
-    .social_midia ul li a img {
-        height: 77px;
-    }
-
-    .baner_content{
-        display: block;
-        justify-content: center;
-        align-items: center;
-        height: 800px;
-        margin: 0;
-        padding: 0;
-        padding-top: 200px;
-    }
-
-    .name h1 {
-        font-size: 110px;
-        line-height: 100%;
-    }
-
-    .name h2 {
-        font-size: 30px;
-        line-height: 100%;
-        margin-top: -5px;
-        margin-left: 1px;
-    }
-
-    .banner_image{
-        background-position: top center;
-        padding: 0;
-    }
-  
-  }
-
+}
 
 @media screen and (max-width: 500px ){
-    .main_container {
-        width: fit-content;
-    }
-    .navbar{
-      height: auto;
-      width: auto;
-      justify-content: unset;
-      margin-top: 6%;
-    }
-  
-    .navbar ul {
-      visibility: hidden;
-      float: left;
-      width: 100px;
-    }
-
-    .navbar .logo a {
-        padding-left: 100%;
-    }
 
     .social_midia ul li {
         display: inline;
-    }
-
-    .social_midia ul li a{
-        padding-right: 15px;
+        padding-right: 27px;
         display: inline-block;
     }
-      
-    .social_midia ul li a img {
-        height: 60px;
+    .social_midia>ul>li:last-child {
+        padding-right: 0px;
     }
 
+    .social_midia ul li a img {
+        height: 56px;
+    }
+    
     .baner_content{
         display: block;
         justify-content: center;
-        align-items: center;
-        height: 800px;
+        align-items: top;
+        height: 812px;
         margin: 0;
         padding: 0;
         padding-top: 200px;
     }
 
     .name h1 {
-        font-size: 90px;
+        font-size: 95px;
         line-height: 100%;
     }
 
@@ -298,52 +267,31 @@ p {
         line-height: 100%;
         margin-top: -5px;
         margin-left: 1px;
-    }
-
-    .banner_image{
-        background-position: top center;
-        padding: 0;
-    }
-      
+    } 
     
 }
 
 @media (max-width: 400px){
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: none;
-    }
-    .navbar ul {
-      visibility: hidden;
-    }
-
-    .navbar .logo a {
-        padding-left: 50%;
-    }
 
     .social_midia ul li {
         display: inline;
-    }
-
-    .social_midia ul li a{
-        padding-right: 15px;
+        padding-right: 16px;
         display: inline-block;
     }
-      
+    .social_midia>ul>li:last-child {
+        padding-right: 0px;
+    }
+
     .social_midia ul li a img {
         height: 56px;
-    }
-    .social_midia>ul>li:last-child>a {
-        padding-right: 0px;
     }
 
     .baner_content{
         display: block;
         justify-content: center;
         align-items: top;
-        height: 800px;
+        height: 812px;
         margin: 0;
         padding: 0;
         padding-top: 200px;
@@ -363,7 +311,6 @@ p {
 
     .banner_image{
         background-position: top center;
-        padding: 0;
     }
 }
 
@@ -372,4 +319,3 @@ p {
         height: 40px;
     }
 }
-*/
