@@ -44,11 +44,25 @@ p {
     top: 12px;
     width: 100%;
     height: 60px;
+    z-index:10
+}
+
+/* no*/
+.navbar:after{
+    content: '';
+    clear: both;
+    display: table;
 }
 
 .navbar .container {
     width: 90%;
     margin: 0 auto;
+}
+
+.navbar .logo{
+    width: max-content;
+    height: 60px;
+    float: left;
 }
 
 .navbar .logo a img {
@@ -126,6 +140,40 @@ p {
     background-color: black
 }
 
+
+/* */
+
+@media all and (max-width: 850px){
+    .navbar {
+        overflow: hidden;
+        background-color: #FFFFFA;
+        position: fixed;
+        top: 12px;
+        width: 100%;
+        height: auto;
+    }
+
+    .navbar .navbar_items ul {
+        margin-right: 0px;
+        float: right;
+    }
+
+    .navbar .navbar_items li {
+        width: 100%;
+        border-bottom: 3px solid #cccccc;
+    }
+
+    .navbar ul li:hover {
+        background-color: blue;
+    }
+    .navbar .navbar_items ul li a:hover {
+        font-weight: normal;
+    }
+
+    .navbar .logo {
+        width: 100%;
+    }
+}
 
 /* Em 630 o itens do menu devem aparecer*/
 
