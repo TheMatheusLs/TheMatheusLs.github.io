@@ -13,6 +13,7 @@
     /* Inserir a fonte padrão
         font-family: ;
     */
+    font-family: 'Lalezar', cursive;
 }
 
 
@@ -24,9 +25,36 @@ body {
 
 p {
     margin-bottom: 15px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 20px;
     color: #FFFFFA;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+
+.container h1 {
+    font-family: 'Lalezar', cursive;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+    color: #FFFFFA;
+    font-size: 30px;
+    line-height: 100%;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.container h2 {
+    font-family: 'Lalezar', cursive;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+    color: #FFFFFA;
+    font-size: 25px;
+    line-height: 100%;
+    text-transform: uppercase;
+    margin: 10px 0;
 }
 
 /************* HOME *****************/
@@ -50,6 +78,7 @@ p {
 .navbar .container {
     width: 90%;
     margin: 0 auto;
+    padding: 0;
 }
 
 .navbar .logo{
@@ -150,24 +179,51 @@ p {
     margin-left: 3px;
 }
 
+/* Sobre*/
+.container {
+    padding: 20px 10%;
+}
+.about {
+    background-color: #2C2A4A
+}
+
+/* curriculo */
+.curriculum{
+    background-image: url('../images/matrix_bg.svg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+/*
+.curriculum .elements {
+    display: flex;
+}
+.langs {
+    width: 50%;
+}
+
+.timeline {
+    width: 50%;
+    float: right;
+}
+*/
+/* Rodapé */
 .footer {
     background-color: #021718;
     bottom: 0px;
     width: 100%;
-    padding: 0 10%;
+
 
 }
 
 .footer .container {
-    width: 90%;
     padding-top: 20px;
-    margin-top:20px;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .footer .year {
     padding-bottom:20px;
-    text-align: center
+    text-align: center;
 }
 
 @media all and (max-width: 750px){
@@ -258,7 +314,7 @@ p {
     }
 
     .name h1 {
-        font-size: 95px;
+        font-size: 600%;
         line-height: 100%;
     }
 
@@ -311,6 +367,28 @@ p {
 
     .banner_image{
         background-position: top center;
+    }
+
+    /* curriculo */
+    .curriculum{
+        background-image: url('../images/matrix_bg.svg');
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+    }
+
+    .curriculum .elements {
+        display: initial;
+    }
+    .langs {
+        width: 100%;
+    }
+
+    .timeline {
+        width: 100%;
+        justify-items: center;
+        text-align: center;
+        padding: 0 10%;
     }
 }
 
