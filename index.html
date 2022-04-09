@@ -1,46 +1,108 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Home | Matheus Lôbo </title><meta name="description" content="Page-specific description"><meta name="keywords" content="Page-specific keywords"><link rel="shortcut icon" href="favicon.ico"><link rel="shortcut icon" href="static/images/favicons/favicon.png" type="image/x-icon"><link rel="apple-touch-icon" href="static/images/favicons/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="static/images/favicons/apple-touch-icon-precomposed.png"><link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800%7COpen+Sans+Condensed:300&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css"><link rel="stylesheet" href="static/css/screen.min.css"><link rel="stylesheet" href="static/css/custom.min.css"><script src="static/js/head.min.js"></script></head><body><script>progressJs().setOptions({overlayMode: true, theme: 'custom'}).start();
-      if(window.attachEvent) {
-          window.attachEvent('onload', function(){ progressJs().end(); });
-      } else {
-          if(window.onload) {
-              var curronload = window.onload;
-              var newonload = function() {
-                  curronload();
-                  progressJs().end();
-              };
-              window.onload = newonload;
-          } else {
-              window.onload = function(){ progressJs().end(); };
-          }
-      }</script>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Home | Matheus Lôbo </title>
+        <meta name="description" content="Page-specific description">
+        <meta name="keywords" content="Page-specific keywords">
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="shortcut icon" href="static/images/favicons/favicon.png" type="image/x-icon">
+        <link rel="apple-touch-icon" href="static/images/favicons/apple-touch-icon.png">
+        <link rel="apple-touch-icon-precomposed" href="static/images/favicons/apple-touch-icon-precomposed.png">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800%7COpen+Sans+Condensed:300&amp;subset=latin,cyrillic" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="static/css/screen.min.css">
+        <link rel="stylesheet" href="static/css/custom.min.css">
+        <script src="static/js/head.min.js"></script>
+    </head>
+    <body>
+        <script>progressJs().setOptions({overlayMode: true, theme: 'custom'}).start();
+            if(window.attachEvent) {
+                window.attachEvent('onload', function(){ progressJs().end(); });
+            } else {
+                if(window.onload) {
+                    var curronload = window.onload;
+                    var newonload = function() {
+                        curronload();
+                        progressJs().end();
+                    };
+                    window.onload = newonload;
+                } else {
+                    window.onload = function(){ progressJs().end(); };
+                }
+            }
+        </script>
       
-      <!-- Header-->
+        <!-- Header-->
       
-    <header class="main-header">
-        <div class="first-nav">
-            <div class="container">
-                <nav class="first-nav__links">
-                    <ul>
-                        <li><a class="is-selected">Português</a></li>
-                        <li><a href="#">English</a></li></ul>
+        <header class="main-header">
+            <div class="first-nav">
+                <div class="container">
+                    <nav class="first-nav__links">
+                        <ul>
+                            <li><a class="is-selected">Português</a></li>
+                            <li><a href="#">English</a></li></ul>
+                        </nav>
+                        <a class="first-nav__navcontrol icon icon_menu js-navcontrol" href="#">Menu</a>
+                </div>
+            </div>
+            <div class="second-nav js-nav">
+                <div class="container">
+                    <a class="second-nav__logo"><span>M.</span></a>
+                    <nav class="menu"><ul>
+                        <li><a class="js-link js-anchor is-selected" href="#home">Início</a></li>
+                        <li><a class="js-link js-anchor" href="#about">Sobre</a></li>
+                        <li><a class="js-link js-anchor" href="#article">Artigos</a></li>
+                        <li><a class="js-link js-anchor" href="#projects">Projetos</a></li>
+                        <li><a class="js-link js-anchor" href="#contacts">Contatos</a></li></ul>
                     </nav>
-                    <a class="first-nav__navcontrol icon icon_menu js-navcontrol" href="#">Menu</a>
+                </div>
             </div>
-        </div>
-        <div class="second-nav js-nav">
+        </header>
+
+        <!-- Home section-->
+        <section class="home-section" id="home">
+            <div class="home-section__bg"></div>
+            <div class="home-section__overlay">
+                <div class="container">
+                    <header class="home-section__header">
+                        <h1>Matheus Lôbo</h1>
+                        <h2>Engenheiro Mecatrônico</h2>
+                    </header>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About section-->
+        <section class="about-section" id="about">
             <div class="container">
-                <a class="second-nav__logo"><span>ML</span></a>
-                <nav class="menu"><ul>
-                    <li><a class="js-link js-anchor is-selected" href="#home">Início</a></li>
-                    <li><a class="js-link js-anchor" href="#about">Sobre</a></li>
-                    <!-- Links para o atalho-->
-                    <li><a class="js-link js-anchor" href="#contacts">Contatos</a></li></ul>
-                </nav>
+                <div class="about-card">
+                    <header class="about-card__header">
+                        <h2>Sobre</h2>
+                    </header>
+                    <div class="about-card__info">
+                        <p>
+                            Mestre em Engenharia Elétrica pela Universidade Federal de Pernambuco (UFPE) em dezembro de 2021. Formado em Engenharia Mecatrônica pelo Centro Universitário Tiradentes no ano de 2018. Em 2017 e 2018 foi estagiário no Departamento de Tecnologia da Informação da UNIT-AL. Atualmente é professor titular de engenharias no Centro Universitário Tiradentes (UNIT-AL).
+                        </p>
+                        <blockquote>
+                            <p>
+                                O método científico é comprovado e verdadeiro. Não é perfeito, é apenas o melhor que temos. Abandoná-lo, junto com seus protocolos céticos, é o caminho para uma idade das trevas - Carl Sagan
+                            </p>
+                        </blockquote>
+                        <p>
+                            Tem experiência em Engenharia Mecatrônica, Engenharia Elétrica e Ciência da Computação com ênfase em simuladores de eventos voltados a redes ópticas. Experiência em programação de microcontroladores (PIC/Arm/Arduino); projeto e construção de manipuladores robóticos; construção e controle de máquinas de comando numérico computadorizado (CNC); desenvolvimento de placas de circuito impresso (Altium/Eagle); desenvolvimento de aplicativos para Windows (C# e XAML); modelagem 3D utilizando SolidWorks, Invento Profissional e Fusion 360; conhecimento de fatiadores para controle de impressão 3D; e conhecimento de programação nas linguagens Python, Java, C#, C++.
+                        </p>
+                        <p class="about-card__info-status">
+                            <span>Ocupação Atual:</span> Professor Titular de Engenharias (UNIT-AL)
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </header>
-        <!-- Home section--><section class="home-section" id="home"><div class="home-section__bg"></div><div class="home-section__overlay"><div class="container"><header class="home-section__header"><h1>Matheus Lôbo</h1><h2>Engenharia Mecatrônica</h2></header></div></div></section><!-- About section--><section class="about-section" id="about"><div class="container"><div class="about-card"><header class="about-card__header"><h2>Sobre</h2></header><div class="about-card__info"><p>Atualmente é professor titular de engenharias no Centro Universitário Tiradentes (UNIT-AL). Mestre em Engenharia Elétrica pela Universidade Federal de Pernambuco (UFPE) em dezembro de 2021. Formado em Engenharia Mecatrônica pelo Centro Universitário Tiradentes no ano de 2018. Em 2017 e 2018 foi estagiário no Departamento de Tecnologia da Informação da UNIT-AL.</p><blockquote><p>O método científico é comprovado e verdadeiro. Não é perfeito, é apenas o melhor que temos. Abandoná-lo, junto com seus protocolos céticos, é o caminho para uma idade das trevas - Carl Sagan</p></blockquote><p>Tem experiência em Engenharia Mecatrônica, Engenharia Elétrica e Ciência da Computação com ênfase em simuladores de eventos voltados a redes ópticas. Experiência em programação de microcontroladores (PIC/Arm/Arduino); projeto e construção de manipuladores robóticos; construção e controle de máquinas de comando numérico computadorizado (CNC); desenvolvimento de placas de circuito impresso (Altium/Eagle); desenvolvimento de aplicativos para Windows (C# e XAML); modelagem 3D utilizando SolidWorks, Invento Profissional e Fusion 360; conhecimento de fatiadores para controle de impressão 3D; e conhecimento de programação nas linguagens Python, Java, C#, C++.</p><p class="about-card__info-status"><span>Ocupação Atual:</span> Professor Titular de Engenharias (UNIT-AL)</p></div></div></div></section><!-- Services section--><section class="common-section" id="services">
-    
+        </section>
+        
+        <!-- Services section-->
+        <section class="common-section" id="services">
         <div class="contacts-section" id="contacts">
             <div class="container">
                 <section class="contact-card">
@@ -48,7 +110,7 @@
                         <h2>Informações de Contato</h2>
                     </header>
                     <div class="contact-info">
-                        <div class="contact-info__logo">ML</div>
+                        <div class="contact-info__logo">M.</div>
                         <div class="contact-info__group">
                             <div class="contact-info__additional">
                                 <p>Fique a vontade para me contatar com as seguintes informações:</p>
