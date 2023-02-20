@@ -37,6 +37,12 @@ ol, ul {
 	list-style: none;
 }
 
+header#header a img {
+	max-height: 65px;
+	margin-top: 5px;
+  }
+  
+
 blockquote, q {
 	quotes: none;
 }
@@ -136,6 +142,10 @@ input, select, textarea {
 				font-size: 13pt;
 			}
 
+			header#header a img {
+				max-height: 50px;
+			  }
+
 		}
 
 		@media screen and (max-width: 1280px) {
@@ -143,6 +153,10 @@ input, select, textarea {
 			body, input, select, textarea {
 				font-size: 12pt;
 			}
+
+			header#header a img {
+				max-height: 45px;
+			  }
 
 		}
 
@@ -152,6 +166,10 @@ input, select, textarea {
 				font-size: 12pt;
 			}
 
+			header#header a img {
+				max-height: 45px;
+			  }
+
 		}
 
 		@media screen and (max-width: 736px) {
@@ -159,6 +177,10 @@ input, select, textarea {
 			body, input, select, textarea {
 				font-size: 12pt;
 			}
+
+			header#header a img {
+				max-height: 35px;
+			  }
 
 		}
 
