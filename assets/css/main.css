@@ -7,6 +7,11 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+:root {
+	--color_timeline: #4c5c96;
+}
+  
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -42,7 +47,7 @@ ol, ul {
 /* Título da linha do tempo */
 
 .title-wrapper .icon {
-	border: #4c5c96 3px solid;
+	border: var(--color_timeline) 3px solid;
 	border-radius: 80%;
 	font-size: 25px;
 	padding: 5px;
@@ -63,7 +68,7 @@ ol, ul {
 
 
 .title-wrapper h2 {
-	font-size: 23pt;
+	font-size: 20pt;
 	color: white;
 	margin-left: 10px;
 	/*border: 1px solid yellow;;*/
@@ -76,36 +81,35 @@ ol, ul {
 
 .timeline-item {
     position: relative;
-	padding-left: 25px;
-    padding-bottom: 10px;
 	list-style-type: none;
-	left: 3px;
+	padding-left: 25px;
 }
 
-.timeline-item:before {
-    left: 3px;
-    content: "";
-    position: absolute;
-    top: -32px;
-    width: 4px;
-    height: 100%;
-    background: #4c5c96;
-    transform: translateX(-50%);
+.timeline-item:not(:last-child) { margin-bottom: 20px; }
+
+.timeline-item:not(:last-child)::before  {
+	content: "";
+	position: absolute;
+	top: -23px;
+	left: 3px;
+	width: 3px;
+	height: calc(100% + 60px);
+	background: var(--color_timeline);
 }
 
 .timeline-item:after {
-    left: 3px;
     content: "";
     position: absolute;
-    top: 10px;
+    top: 5px;
+    left: -3.5px;
     width: 16px;
     height: 16px;
     background: #fff;
-    border: 4px solid #4c5c96;
+    border: 4px solid var(--color_timeline);
     border-radius: 50%;
-    transform: translateX(-50%);
 }
 
+/*
 .timeline-list li:last-child:before {
 	content: "";
     position: absolute;
@@ -116,9 +120,19 @@ ol, ul {
     background: #4c5c96;
     transform: translateX(-50%);
 }
-
+*/
 .timeline-item-title {
 	font-size: 14pt;
+	margin: 0;
+}
+
+.timeline-item-formC {
+	font-size: 10pt;
+	margin: 0;
+}
+
+.timeline-item-formCLoc {
+	font-size: 8pt;
 	margin: 0;
 }
 
@@ -131,7 +145,7 @@ ol, ul {
 	font-size: 12pt;
 	font-weight: bold;
 	margin: 0;
-	color: #4c5c96;
+	color: var(--color_timeline);
 }
 
 .timeline-text {
