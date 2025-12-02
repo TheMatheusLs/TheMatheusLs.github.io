@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matheus Lôbo | Dev</title>
+    <title>Erro 404 | Matheus Lôbo</title>
+    
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
     <meta name="description" content="Engenheiro e Especialista em formatação LaTeX, gráficos vetoriais (TikZ/Python) e automação de relatórios. Soluções para acadêmicos e empresas.">
     <meta name="keywords" content="LaTeX, TikZ, Python, Automação, Gráficos Científicos, Formatação ABNT, Matheus Lôbo">
@@ -27,7 +28,7 @@
                     fontFamily: {
                         serif: ['"Playfair Display"', 'serif'],
                         sans: ['"Inter"', 'sans-serif'],
-                        mono: ['"Fira Code"', 'monospace'], /* Fonte mono para o "código" */
+                        mono: ['"Fira Code"', 'monospace'], 
                     }
                 }
             }
@@ -41,10 +42,22 @@
             <a href="index.html" class="font-serif text-2xl font-bold tracking-tight text-academic-blue">
                 Matheus Lôbo<span class="text-gray-400">.</span>
             </a>
-            <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-academic-blue flex items-center transition">
-                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                Voltar ao início
-            </a>
+            
+            <div class="flex items-center gap-6">
+                <div class="flex items-center space-x-2 border-r border-gray-300 pr-4">
+                    <button onclick="setLanguage('pt')" class="hover:opacity-75 transition" title="Português">
+                        <img src="https://flagcdn.com/w40/br.png" width="24" alt="Brasil">
+                    </button>
+                    <button onclick="setLanguage('en')" class="hover:opacity-75 transition" title="English">
+                        <img src="https://flagcdn.com/w40/us.png" width="24" alt="USA">
+                    </button>
+                </div>
+
+                <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-academic-blue flex items-center transition" data-i18n="back_home">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    Voltar ao início
+                </a>
+            </div>
         </div>
     </header>
 
@@ -62,19 +75,19 @@
         </div>
 
         <h1 class="font-serif text-6xl font-bold text-academic-blue mb-2">404</h1>
-        <h2 class="font-sans text-xl font-semibold text-gray-900 mb-6">Página não encontrada</h2>
+        <h2 class="font-sans text-xl font-semibold text-gray-900 mb-6" data-i18n="title_404">Página não encontrada</h2>
         
         <div class="bg-gray-900 text-gray-300 font-mono text-sm p-4 rounded-lg shadow-inner text-left max-w-md w-full mb-8 overflow-x-auto border border-gray-700">
-            <p><span class="text-green-400">user@matheus:~$</span> cd /website/pagina-solicitada</p>
-            <p class="text-red-400">bash: cd: /website/pagina-solicitada: No such file or directory</p>
+            <p><span class="text-green-400">user@matheus:~$</span> cd /website/page-requested</p>
+            <p class="text-red-400">bash: cd: /website/page-requested: No such file or directory</p>
             <p><span class="text-green-400">user@matheus:~$</span> <span class="animate-pulse">_</span></p>
         </div>
 
-        <p class="text-text-light max-w-lg mb-10">
+        <p class="text-text-light max-w-lg mb-10" data-i18n="text_404">
             Parece que o link que você tentou acessar foi movido, deletado ou nunca existiu (talvez seja apenas um erro de digitação no LaTeX?).
         </p>
 
-        <a href="index.html" class="bg-academic-blue text-white px-8 py-3 rounded hover:bg-[#152a4d] transition duration-300 font-medium shadow-lg hover:shadow-xl inline-flex items-center">
+        <a href="index.html" class="bg-academic-blue text-white px-8 py-3 rounded hover:bg-[#152a4d] transition duration-300 font-medium shadow-lg hover:shadow-xl inline-flex items-center" data-i18n="btn_return">
             Retornar à Home
         </a>
 
@@ -85,6 +98,33 @@
             &copy; 2026 Matheus Lôbo.
         </div>
     </footer>
+
+    <script>
+        const translations = {
+            pt: {
+                back_home: `<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>Voltar ao início`,
+                title_404: "Página não encontrada",
+                text_404: "Parece que o link que você tentou acessar foi movido, deletado ou nunca existiu (talvez seja apenas um erro de digitação no LaTeX?).",
+                btn_return: "Retornar à Home"
+            },
+            en: {
+                back_home: `<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>Back to home`,
+                title_404: "Page Not Found",
+                text_404: "It seems the link you tried to access was moved, deleted, or never existed (maybe just a LaTeX typo?).",
+                btn_return: "Return Home"
+            }
+        };
+
+        function setLanguage(lang) {
+            const texts = translations[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (texts[key]) {
+                    el.innerHTML = texts[key];
+                }
+            });
+        }
+    </script>
 
 </body>
 </html>
