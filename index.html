@@ -8,15 +8,36 @@
     <meta name="description" content="Engenheiro e Especialista em formatação LaTeX, gráficos vetoriais (TikZ/Python) e automação de relatórios. Soluções para acadêmicos e empresas.">
     <meta name="keywords" content="LaTeX, TikZ, Python, Automação, Gráficos Científicos, Formatação ABNT, Matheus Lôbo">
     <meta name="author" content="Matheus Lôbo">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://matheuslobo.com/">
+    <meta property="og:title" content="Matheus Lôbo | Engenharia & Dados">
+    <meta property="og:description" content="Especialista em formatação LaTeX, gráficos vetoriais e automação de relatórios. Transforme seus dados em impacto.">
+    <meta property="og:image" content="https://thematheusls.github.io/thematheusls/assets/profile-pic2.png"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thematheusls.github.io/thematheusls/">
+    <meta property="twitter:title" content="Matheus Lôbo | Engenharia & Dados">
+    <meta property="twitter:description" content="Especialista em formatação LaTeX, gráficos vetoriais e automação de relatórios.">
+    <meta property="twitter:image" content="https://thematheusls.github.io/thematheusls/assets/profile-pic2.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BXV8JXT7G"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0BXV8JXT7G');
+    </script>
     
     <script>
         tailwind.config = {
+            darkMode: 'class', // ATIVA O MODO NOTURNO MANUAL
             theme: {
                 extend: {
                     colors: {
@@ -37,58 +58,59 @@
     <style>
         html { scroll-behavior: smooth; }
         .fade-anim { animation: fadeEffect 1.5s; }
-        @keyframes fadeEffect {
-            from {opacity: 0.4}
-            to {opacity: 1}
+        @keyframes fadeEffect { from {opacity: 0.4} to {opacity: 1} }
+        html { 
+            scroll-behavior: smooth; 
+            scroll-padding-top: 6rem; /* A mágica acontece aqui (aprox. 96px) */
         }
     </style>
 </head>
-<body class="bg-paper text-text-dark font-sans antialiased selection:bg-academic-blue selection:text-white">
+<body class="bg-paper text-text-dark font-sans antialiased selection:bg-academic-blue selection:text-white dark:bg-slate-900 dark:text-gray-100 transition-colors duration-300">
 
-    <header class="fixed w-full top-0 z-50 bg-paper/95 backdrop-blur border-b border-gray-200">
+    <header class="fixed w-full top-0 z-50 bg-paper/95 dark:bg-slate-900/95 backdrop-blur border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
-            <a href="#" class="font-serif text-2xl font-bold tracking-tight text-academic-blue">
+            <a href="#" class="font-serif text-2xl font-bold tracking-tight text-academic-blue dark:text-blue-400">
                 Matheus Lôbo<span class="text-gray-400">.</span>
             </a>
             
-            <div class="flex items-center gap-6">
+            <div class="flex items-center gap-4 md:gap-6">
                 <nav class="hidden md:flex space-x-8 text-sm font-medium">
-                    <a href="#servicos" class="hover:text-academic-blue transition-colors" data-i18n="menu_services">Serviços</a>
-                    <a href="#ferramentas" class="hover:text-academic-blue transition-colors" data-i18n="menu_tools">Ferramentas</a>
-                    <a href="em-breve.html" class="hover:text-academic-blue transition-colors" data-i18n="menu_blog">Blog</a>
-                    <a href="#fale-comigo" class="hover:text-academic-blue transition-colors" data-i18n="menu_contact">Contato</a>
+                    <a href="#servicos" class="hover:text-academic-blue dark:hover:text-blue-400 transition-colors" data-i18n="menu_services">Serviços</a>
+                    <a href="#ferramentas" class="hover:text-academic-blue dark:hover:text-blue-400 transition-colors" data-i18n="menu_tools">Ferramentas</a>
+                    <a href="em-breve.html" class="hover:text-academic-blue dark:hover:text-blue-400 transition-colors" data-i18n="menu_blog">Blog</a>
+                    <a href="#fale-comigo" class="hover:text-academic-blue dark:hover:text-blue-400 transition-colors" data-i18n="menu_contact">Contato</a>
                 </nav>
 
-                <div class="hidden md:flex items-center space-x-2 border-l border-gray-300 pl-4">
-                    <button onclick="setLanguage('pt')" class="hover:opacity-75 transition" title="Português">
-                        <img src="https://flagcdn.com/w40/br.png" width="24" alt="Brasil">
+                <div class="flex items-center space-x-4 border-l border-gray-300 dark:border-gray-700 pl-4">
+                    
+                    <button onclick="toggleTheme()" class="hover:opacity-75 transition focus:outline-none" title="Alternar Tema">
+                        <svg id="bulb-icon" class="w-6 h-6 text-gray-600 dark:text-yellow-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
                     </button>
-                    <button onclick="setLanguage('en')" class="hover:opacity-75 transition" title="English">
-                        <img src="https://flagcdn.com/w40/us.png" width="24" alt="USA">
-                    </button>
+
+                    <div class="flex items-center space-x-2">
+                        <button onclick="setLanguage('pt')" class="hover:opacity-75 transition" title="Português">
+                            <img src="https://flagcdn.com/w40/br.png" width="24" alt="Brasil">
+                        </button>
+                        <button onclick="setLanguage('en')" class="hover:opacity-75 transition" title="English">
+                            <img src="https://flagcdn.com/w40/us.png" width="24" alt="USA">
+                        </button>
+                    </div>
                 </div>
 
-                <button id="mobile-btn" class="md:hidden text-gray-700 focus:outline-none">
+                <button id="mobile-btn" class="md:hidden text-gray-700 dark:text-gray-200 focus:outline-none">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                 </button>
             </div>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-6 py-4 shadow-sm">
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4 shadow-sm">
             <nav class="flex flex-col space-y-4 text-center">
-                <a href="#servicos" class="block py-2 text-gray-600 hover:text-academic-blue" data-i18n="menu_services">Serviços</a>
-                <a href="#ferramentas" class="block py-2 text-gray-600 hover:text-academic-blue" data-i18n="menu_tools">Ferramentas</a>
-                <a href="em-breve.html" class="block py-2 text-gray-600 hover:text-academic-blue" data-i18n="menu_blog">Blog</a>
-                <a href="#fale-comigo" class="block py-2 text-gray-600 hover:text-academic-blue" data-i18n="menu_contact">Contato</a>
-                
-                <div class="flex justify-center items-center space-x-4 pt-4 border-t border-gray-100">
-                    <button onclick="setLanguage('pt')" class="hover:opacity-75">
-                        <img src="https://flagcdn.com/w40/br.png" width="32" alt="Brasil">
-                    </button>
-                    <button onclick="setLanguage('en')" class="hover:opacity-75">
-                        <img src="https://flagcdn.com/w40/us.png" width="32" alt="USA">
-                    </button>
-                </div>
+                <a href="#servicos" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-academic-blue" data-i18n="menu_services">Serviços</a>
+                <a href="#ferramentas" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-academic-blue" data-i18n="menu_tools">Ferramentas</a>
+                <a href="em-breve.html" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-academic-blue" data-i18n="menu_blog">Blog</a>
+                <a href="#fale-comigo" class="block py-2 text-gray-600 dark:text-gray-300 hover:text-academic-blue" data-i18n="menu_contact">Contato</a>
             </nav>
         </div>
     </header>
@@ -96,51 +118,51 @@
     <main class="pt-20">
 
         <section class="min-h-[85vh] flex flex-col justify-center items-center text-center px-4 max-w-4xl mx-auto">
-            <span class="mb-4 px-3 py-1 bg-gray-100 rounded-full text-xs font-semibold tracking-wider text-gray-500 uppercase" data-i18n="hero_badge">
+            <span class="mb-4 px-3 py-1 bg-gray-100 dark:bg-slate-800 rounded-full text-xs font-semibold tracking-wider text-gray-500 dark:text-gray-400 uppercase" data-i18n="hero_badge">
                 Acadêmico & Developer
             </span>
-            <h1 class="font-serif text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6" data-i18n="hero_title">
-                Transformando dados complexos em <span class="text-academic-blue italic">visualizações precisas</span>.
+            <h1 class="font-serif text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6" data-i18n="hero_title">
+                Transformando dados complexos em <span class="text-academic-blue dark:text-blue-400 italic">visualizações precisas</span>.
             </h1>
-            <p class="text-lg md:text-xl text-text-light max-w-2xl mb-10 leading-relaxed" data-i18n="hero_desc">
+            <p class="text-lg md:text-xl text-text-light dark:text-gray-400 max-w-2xl mb-10 leading-relaxed" data-i18n="hero_desc">
                 Especialista em design de documentos LaTeX, visualização científica e automação de relatórios personalizados.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#servicos" class="bg-academic-blue text-white px-8 py-3 rounded hover:bg-[#152a4d] transition duration-300 font-medium shadow-lg hover:shadow-xl" data-i18n="btn_services">
+                <a href="#servicos" class="bg-academic-blue dark:bg-blue-600 text-white px-8 py-3 rounded hover:bg-[#152a4d] dark:hover:bg-blue-700 transition duration-300 font-medium shadow-lg hover:shadow-xl" data-i18n="btn_services">
                     Conheça meus serviços
                 </a>
-                <a href="#ferramentas" class="bg-white border border-gray-300 text-gray-700 px-8 py-3 rounded hover:bg-gray-50 transition duration-300 font-medium flex items-center justify-center" data-i18n="btn_tools">
+                <a href="#ferramentas" class="bg-white dark:bg-slate-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 px-8 py-3 rounded hover:bg-gray-50 dark:hover:bg-slate-700 transition duration-300 font-medium flex items-center justify-center" data-i18n="btn_tools">
                     Ferramentas Gratuitas
                 </a>
             </div>
         </section>
 
-        <section id="servicos" class="py-20 bg-white">
+        <section id="servicos" class="py-20 bg-white dark:bg-slate-800 transition-colors duration-300">
             <div class="max-w-6xl mx-auto px-6">
-                <h2 class="font-serif text-3xl font-bold text-gray-900 mb-16 text-center" data-i18n="section_solutions">Soluções Especializadas</h2>
+                <h2 class="font-serif text-3xl font-bold text-gray-900 dark:text-white mb-16 text-center" data-i18n="section_solutions">Soluções Especializadas</h2>
                 
                 <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
-                    <div class="relative bg-gray-50 rounded-lg border border-gray-100 shadow-sm overflow-hidden group h-80 order-1">
+                    <div class="relative bg-gray-50 dark:bg-slate-700 rounded-lg border border-gray-100 dark:border-gray-600 shadow-sm overflow-hidden group h-80 order-1">
                         
                         <div class="mySlides fade-anim w-full h-full flex flex-col items-center justify-center bg-white p-4">
                             <div class="w-full h-56 flex items-center justify-center mb-2">
                                 <img src="./assets/raman.svg" alt="Gráfico Raman 3D" class="max-h-full max-w-full object-contain">
                             </div>
-                            <p class="text-xs text-gray-500 font-mono" data-i18n="caption_raman">Exemplo 1 - Modelagem 3D: Efeito Raman em Fibra Óptica</p>
+                            <p class="text-xs text-gray-500 font-mono" data-i18n="caption_raman">Exemplo 1 - Modelagem 3D</p>
                         </div>
 
                         <div class="mySlides fade-anim hidden w-full h-full flex flex-col items-center justify-center bg-white p-4">
                             <div class="w-full h-56 flex items-center justify-center mb-2">
                                 <img src="./assets/circuito_tikz.svg" alt="Circuito Elétrico" class="max-h-full max-w-full object-contain">
                             </div>
-                            <p class="text-xs text-gray-500 font-mono" data-i18n="caption_circuit">Exemplo 2 - Esquemático Elétrico Profissional (Circuitikz)</p>
+                            <p class="text-xs text-gray-500 font-mono" data-i18n="caption_circuit">Exemplo 2 - Circuito</p>
                         </div>
 
                         <div class="mySlides fade-anim hidden w-full h-full flex flex-col items-center justify-center bg-white p-4">
                             <div class="w-full h-56 flex items-center justify-center mb-2">
-                                <img src="./assets/fluxo_ML.svg" alt="Fluxograma Machine Learning" class="max-h-full max-w-full object-contain">
+                                <img src="./assets/fluxo_ML.svg" alt="Fluxograma ML" class="max-h-full max-w-full object-contain">
                             </div>
-                            <p class="text-xs text-gray-500 font-mono" data-i18n="caption_ml">Exemplo 3 - Fluxograma de Machine Learning (TikZ)</p>
+                            <p class="text-xs text-gray-500 font-mono" data-i18n="caption_ml">Exemplo 3 - Fluxograma</p>
                         </div>
 
                         <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-1 shadow text-gray-600 hover:text-academic-blue" onclick="plusSlides(-1)">❮</button>
@@ -148,21 +170,21 @@
                     </div>
                     
                     <div class="flex flex-col h-full justify-center order-2">
-                        <span class="text-academic-blue font-bold tracking-wider text-xs uppercase mb-2" data-i18n="badge_researchers">Para Pesquisadores</span>
-                        <h3 class="font-serif text-2xl font-bold mb-4" data-i18n="title_academic">Produção Acadêmica Profissional</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed" data-i18n="desc_academic">
-                            A aceitação de artigos científicos depende da clareza visual. Transformo rascunhos em figuras prontas para publicação em journals de alto impacto.
+                        <span class="text-academic-blue dark:text-blue-400 font-bold tracking-wider text-xs uppercase mb-2" data-i18n="badge_researchers">Para Pesquisadores</span>
+                        <h3 class="font-serif text-2xl font-bold mb-4 text-gray-900 dark:text-white" data-i18n="title_academic">Produção Acadêmica Profissional</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed" data-i18n="desc_academic">
+                            A aceitação de artigos científicos depende da clareza visual. Transformo rascunhos em figuras prontas para publicação.
                         </p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center text-sm text-gray-600"><svg class="w-5 h-5 text-academic-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="list_formatting">Formatação de Teses e Dissertações (ABNT/APA)</span></li>
-                            <li class="flex items-center text-sm text-gray-600"><svg class="w-5 h-5 text-academic-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="list_vectors">Criação de gráficos vetoriais (qualidade máxima em qualquer zoom)</span></li>
-                            <li class="flex items-center text-sm text-gray-600"><svg class="w-5 h-5 text-academic-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="list_latex">Consultoria e Revisão em LaTeX</span></li>
+                        <ul class="space-y-3 mb-8 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center text-sm"><svg class="w-5 h-5 text-academic-blue dark:text-blue-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="list_formatting">Formatação de Teses e Dissertações</span></li>
+                            <li class="flex items-center text-sm"><svg class="w-5 h-5 text-academic-blue dark:text-blue-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="list_vectors">Criação de gráficos vetoriais</span></li>
+                            <li class="flex items-center text-sm"><svg class="w-5 h-5 text-academic-blue dark:text-blue-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg><span data-i18n="list_latex">Consultoria e Revisão em LaTeX</span></li>
                         </ul>
                         <div class="flex flex-col sm:flex-row gap-4 mt-4">
-                            <button onclick="scrollToContact('academico')" class="bg-academic-blue text-white px-6 py-3 rounded text-center hover:bg-[#152a4d] transition shadow-md hover:shadow-lg font-medium flex-1 sm:flex-none" data-i18n="btn_quote_academic">
+                            <button onclick="scrollToContact('academico')" class="bg-academic-blue dark:bg-blue-600 text-white px-6 py-3 rounded text-center hover:bg-[#152a4d] dark:hover:bg-blue-700 transition shadow-md hover:shadow-lg font-medium flex-1 sm:flex-none" data-i18n="btn_quote_academic">
                                 Orçamento Acadêmico
                             </button>
-                            <a href="em-breve.html" class="border border-academic-blue text-academic-blue px-6 py-3 rounded text-center hover:bg-blue-50 transition font-medium flex items-center justify-center flex-1 sm:flex-none group">
+                            <a href="em-breve.html" class="border border-academic-blue dark:border-blue-400 text-academic-blue dark:text-blue-400 px-6 py-3 rounded text-center hover:bg-blue-50 dark:hover:bg-slate-700 transition font-medium flex items-center justify-center flex-1 sm:flex-none group">
                                 <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                                 <span data-i18n="btn_portfolio">Ver Portfólio</span>
                             </a>
@@ -170,27 +192,27 @@
                     </div>
                 </div>
 
-                <div class="w-full h-px bg-gray-100 my-12 md:hidden"></div>
+                <div class="w-full h-px bg-gray-100 dark:bg-gray-700 my-12 md:hidden"></div>
 
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="flex flex-col h-full justify-center order-2 md:order-1">
-                        <span class="text-green-700 font-bold tracking-wider text-xs uppercase mb-2" data-i18n="badge_companies">Para Empresas & Laboratórios</span>
-                        <h3 class="font-serif text-2xl font-bold mb-4" data-i18n="title_automation">Automação de Relatórios em Escala</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed" data-i18n="desc_automation">
-                            Deixe o trabalho manual de lado. Desenvolvo scripts em Python que processam seus dados brutos e geram centenas de relatórios PDF personalizados instantaneamente.
+                        <span class="text-green-700 dark:text-green-400 font-bold tracking-wider text-xs uppercase mb-2" data-i18n="badge_companies">Para Empresas & Laboratórios</span>
+                        <h3 class="font-serif text-2xl font-bold mb-4 text-gray-900 dark:text-white" data-i18n="title_automation">Automação de Relatórios em Escala</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed" data-i18n="desc_automation">
+                            Deixe o trabalho manual de lado. Desenvolvo scripts em Python que processam seus dados brutos e geram centenas de relatórios.
                         </p>
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center text-sm text-gray-600"><svg class="w-5 h-5 text-green-700 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="list_bulk">Geração em massa a partir de Excel/CSV/SQL</span></li>
-                            <li class="flex items-center text-sm text-gray-600"><svg class="w-5 h-5 text-green-700 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="list_layouts">Layouts consistentes e à prova de erros humanos</span></li>
-                            <li class="flex items-center text-sm text-gray-600"><svg class="w-5 h-5 text-green-700 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="list_integration">Integração com visualização de dados (Matplotlib/Pandas)</span></li>
+                        <ul class="space-y-3 mb-8 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center text-sm"><svg class="w-5 h-5 text-green-700 dark:text-green-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="list_bulk">Geração em massa</span></li>
+                            <li class="flex items-center text-sm"><svg class="w-5 h-5 text-green-700 dark:text-green-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="list_layouts">Layouts consistentes</span></li>
+                            <li class="flex items-center text-sm"><svg class="w-5 h-5 text-green-700 dark:text-green-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="list_integration">Integração com visualização de dados</span></li>
                         </ul>
                         <div class="flex flex-col sm:flex-row gap-4 mt-4">
-                            <button onclick="scrollToContact('automacao')" class="bg-green-700 text-white px-6 py-3 rounded text-center hover:bg-green-800 transition shadow-md hover:shadow-lg font-medium flex-1 sm:flex-none" data-i18n="btn_quote_automation">
+                            <button onclick="scrollToContact('automacao')" class="bg-green-700 dark:bg-green-600 text-white px-6 py-3 rounded text-center hover:bg-green-800 transition shadow-md hover:shadow-lg font-medium flex-1 sm:flex-none" data-i18n="btn_quote_automation">
                                 Cotar Automação
                             </button>
-                            <a href="em-breve.html" class="border border-green-700 text-green-700 px-6 py-3 rounded text-center hover:bg-green-50 transition font-medium flex items-center justify-center flex-1 sm:flex-none group">
+                            <a href="em-breve.html" class="border border-green-700 dark:border-green-400 text-green-700 dark:text-green-400 px-6 py-3 rounded text-center hover:bg-green-50 dark:hover:bg-slate-700 transition font-medium flex items-center justify-center flex-1 sm:flex-none group">
                                 <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
-                                <span data-i18n="btn_examples">Exemplos de Relatórios</span>
+                                <span data-i18n="btn_examples">Exemplos</span>
                             </a>
                         </div>
                     </div>
@@ -222,44 +244,44 @@
             </div>
         </section>
 
-        <section id="ferramentas" class="py-20 bg-paper">
+        <section id="ferramentas" class="py-20 bg-paper dark:bg-slate-900 transition-colors duration-300">
             <div class="max-w-6xl mx-auto px-6 text-center">
-                <h2 class="font-serif text-3xl font-bold text-gray-900 mb-6" data-i18n="tools_title">Ferramentas Gratuitas</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto mb-12" data-i18n="tools_desc">
+                <h2 class="font-serif text-3xl font-bold text-gray-900 dark:text-white mb-6" data-i18n="tools_title">Ferramentas Gratuitas</h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12" data-i18n="tools_desc">
                     Utilitários desenvolvidos para facilitar a vida acadêmica.
                 </p>
 
                 <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition text-left group flex flex-col h-full">
-                        <div class="h-12 w-12 bg-blue-50 text-academic-blue rounded flex items-center justify-center mb-4 group-hover:bg-academic-blue group-hover:text-white transition">
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition text-left group flex flex-col h-full">
+                        <div class="h-12 w-12 bg-blue-50 dark:bg-slate-700 text-academic-blue dark:text-blue-400 rounded flex items-center justify-center mb-4 group-hover:bg-academic-blue group-hover:text-white transition">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
                         </div>
-                        <h3 class="font-bold text-lg mb-2">Img to Circuitikz</h3>
-                        <p class="text-sm text-gray-500 mb-6 flex-grow" data-i18n="card_img_desc">
-                            Converta imagens de circuitos desenhados à mão em código LaTeX automaticamente utilizando IA.
+                        <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Img to Circuitikz</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 flex-grow" data-i18n="card_img_desc">
+                            Converta imagens de circuitos desenhados à mão em código LaTeX.
                         </p>
-                        <a href="em-breve.html" class="text-academic-blue text-sm font-bold hover:underline" data-i18n="link_access">Acessar Ferramenta →</a>
+                        <a href="em-breve.html" class="text-academic-blue dark:text-blue-400 text-sm font-bold hover:underline" data-i18n="link_access">Acessar Ferramenta →</a>
                     </div>
 
-                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition text-left group flex flex-col h-full">
-                        <div class="h-12 w-12 bg-green-50 text-green-700 rounded flex items-center justify-center mb-4 group-hover:bg-green-700 group-hover:text-white transition">
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md transition text-left group flex flex-col h-full">
+                        <div class="h-12 w-12 bg-green-50 dark:bg-slate-700 text-green-700 dark:text-green-400 rounded flex items-center justify-center mb-4 group-hover:bg-green-700 group-hover:text-white transition">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                         </div>
-                        <h3 class="font-bold text-lg mb-2">Tabela to LaTeX</h3>
-                        <p class="text-sm text-gray-500 mb-6 flex-grow" data-i18n="card_table_desc">
-                            Cole dados do Excel ou CSV e gere instantaneamente o código de tabelas LaTeX formatadas (Booktabs).
+                        <h3 class="font-bold text-lg mb-2 text-gray-900 dark:text-white">Tabela to LaTeX</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-6 flex-grow" data-i18n="card_table_desc">
+                            Cole dados do Excel ou CSV e gere instantaneamente o código LaTeX.
                         </p>
-                        <a href="em-breve.html" class="text-academic-blue text-sm font-bold hover:underline" data-i18n="link_access">Acessar Ferramenta →</a>
+                        <a href="em-breve.html" class="text-academic-blue dark:text-blue-400 text-sm font-bold hover:underline" data-i18n="link_access">Acessar Ferramenta →</a>
                     </div>
 
-                    <div class="bg-academic-blue p-8 rounded-lg shadow-sm border border-academic-blue hover:shadow-lg transition text-left flex flex-col h-full relative overflow-hidden">
+                    <div class="bg-academic-blue dark:bg-blue-900 p-8 rounded-lg shadow-sm border border-academic-blue hover:shadow-lg transition text-left flex flex-col h-full relative overflow-hidden">
                         <div class="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 rounded-full bg-white opacity-10"></div>
                         <div class="h-12 w-12 bg-white/10 text-white rounded flex items-center justify-center mb-4">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                         </div>
                         <h3 class="font-bold text-lg mb-2 text-white" data-i18n="card_custom_title">Precisa de algo específico?</h3>
                         <p class="text-sm text-blue-100 mb-6 flex-grow" data-i18n="card_custom_desc">
-                            Tem uma ideia de ferramenta ou precisa de uma automação especial? Entre em contato para um orçamento.
+                            Tem uma ideia de ferramenta ou precisa de uma automação especial? Entre em contato.
                         </p>
                         <button onclick="scrollToContact('geral')" class="bg-white text-academic-blue text-sm font-bold py-2 px-4 rounded text-center hover:bg-gray-100 transition w-full" data-i18n="btn_custom">Solicitar Orçamento</button>
                     </div>
@@ -268,22 +290,22 @@
             </div>
         </section>
 
-        <section id="fale-comigo" class="py-20 bg-white border-t border-gray-100">
+        <section id="fale-comigo" class="py-20 bg-white dark:bg-slate-800 border-t border-gray-100 dark:border-gray-700 transition-colors duration-300">
             <div class="max-w-4xl mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="font-serif text-3xl font-bold text-gray-900 mb-4" data-i18n="contact_title">Vamos Conversar?</h2>
-                    <p class="text-gray-600" data-i18n="contact_desc">Escolha seu canal preferido para falarmos sobre seu projeto.</p>
+                    <h2 class="font-serif text-3xl font-bold text-gray-900 dark:text-white mb-4" data-i18n="contact_title">Vamos Conversar?</h2>
+                    <p class="text-gray-600 dark:text-gray-300" data-i18n="contact_desc">Escolha seu canal preferido para falarmos sobre seu projeto.</p>
                 </div>
 
-                <div class="bg-paper p-8 rounded-2xl border border-gray-200 shadow-sm">
+                <div class="bg-paper dark:bg-slate-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm transition-colors duration-300">
                     <div class="grid md:grid-cols-2 gap-6 mb-8">
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="label_name">Qual seu nome?</label>
-                            <input type="text" id="clientName" placeholder="Seu nome aqui..." oninput="updateMessage()" class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-academic-blue focus:border-academic-blue outline-none transition">
+                            <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2" data-i18n="label_name">Qual seu nome?</label>
+                            <input type="text" id="clientName" placeholder="Seu nome aqui..." oninput="updateMessage()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded focus:ring-2 focus:ring-academic-blue dark:focus:ring-blue-500 focus:border-academic-blue bg-white dark:bg-slate-800 dark:text-white outline-none transition">
                         </div>
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="label_subject">Assunto de Interesse</label>
-                            <select id="interestSubject" onchange="updateMessage()" class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-academic-blue outline-none bg-white">
+                            <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2" data-i18n="label_subject">Assunto de Interesse</label>
+                            <select id="interestSubject" onchange="updateMessage()" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded focus:ring-2 focus:ring-academic-blue dark:focus:ring-blue-500 outline-none bg-white dark:bg-slate-800 dark:text-white">
                                 <option value="geral">Orçamento Geral</option>
                                 <option value="academico">Formatação & LaTeX</option>
                                 <option value="automacao">Automação & Python</option>
@@ -291,28 +313,25 @@
                         </div>
                     </div>
 
-                    <div class="bg-white p-4 rounded border border-gray-200 mb-8">
+                    <div class="bg-white dark:bg-slate-800 p-4 rounded border border-gray-200 dark:border-gray-600 mb-8">
                         <label class="block text-xs font-bold text-gray-400 uppercase mb-2" data-i18n="msg_label">Mensagem que será enviada:</label>
-                        <p id="messagePreview" class="text-gray-600 italic text-sm">Olá Matheus, sou [Seu Nome] e cheguei aqui pelo seu site. Gostaria de saber mais sobre seus serviços.</p>
+                        <p id="messagePreview" class="text-gray-600 dark:text-gray-300 italic text-sm">Olá Matheus, sou [Seu Nome] e cheguei aqui pelo seu site. Gostaria de saber mais sobre seus serviços.</p>
                     </div>
 
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <a href="javascript:void(0)" onclick="sendMessage('whatsapp')" class="flex flex-col items-center justify-center p-4 rounded border border-green-500 text-green-600 hover:bg-green-50 transition group">
+                        <a href="javascript:void(0)" onclick="sendMessage('whatsapp')" class="flex flex-col items-center justify-center p-4 rounded border border-green-500 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/30 transition group">
                             <svg class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
                             <span class="text-xs font-bold">WhatsApp</span>
                         </a>
-
-                        <a href="javascript:void(0)" onclick="sendMessage('telegram')" class="flex flex-col items-center justify-center p-4 rounded border border-blue-400 text-blue-500 hover:bg-blue-50 transition group">
+                        <a href="javascript:void(0)" onclick="sendMessage('telegram')" class="flex flex-col items-center justify-center p-4 rounded border border-blue-400 text-blue-500 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition group">
                             <svg class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.68c.223-.198-.054-.306-.346-.108l-6.4 4.02-2.76-.86c-.6-.188-.612-.602.126-.892l10.766-4.154c.498-.19.934.125.75.919z"/></svg>
                             <span class="text-xs font-bold">Telegram</span>
                         </a>
-
-                        <a href="javascript:void(0)" onclick="sendMessage('instagram')" class="flex flex-col items-center justify-center p-4 rounded border border-pink-500 text-pink-600 hover:bg-pink-50 transition group">
+                        <a href="javascript:void(0)" onclick="sendMessage('instagram')" class="flex flex-col items-center justify-center p-4 rounded border border-pink-500 text-pink-600 dark:text-pink-400 hover:bg-pink-50 dark:hover:bg-pink-900/30 transition group">
                             <svg class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
                             <span class="text-xs font-bold">Instagram</span>
                         </a>
-
-                        <a href="javascript:void(0)" onclick="sendMessage('email')" class="flex flex-col items-center justify-center p-4 rounded border border-gray-400 text-gray-600 hover:bg-gray-50 transition group">
+                        <a href="javascript:void(0)" onclick="sendMessage('email')" class="flex flex-col items-center justify-center p-4 rounded border border-gray-400 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-slate-700 transition group">
                             <svg class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             <span class="text-xs font-bold">E-mail</span>
                         </a>
@@ -323,20 +342,20 @@
 
     </main>
 
-    <footer class="bg-gray-100 border-t border-gray-200 py-16">
+    <footer class="bg-gray-100 dark:bg-slate-800 border-t border-gray-200 dark:border-gray-700 py-16 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-12 items-start">
                 
                 <div>
                     <div class="flex items-center gap-4 mb-6">
-                        <img src="./assets/profile-pic2.png" alt="Matheus Lôbo" class="w-16 h-16 rounded-full object-cover border-2 border-white shadow-md">
+                        <img src="./assets/profile-pic2.png" alt="Matheus Lôbo" class="w-16 h-16 rounded-full object-cover border-2 border-white dark:border-gray-600 shadow-md">
                         <div>
-                            <h4 class="font-serif text-2xl font-bold text-gray-900 leading-none">Matheus Lôbo</h4>
-                            <span class="text-xs text-academic-blue font-semibold tracking-wider uppercase" data-i18n="role_title">Engenharia & Dados</span>
+                            <h4 class="font-serif text-2xl font-bold text-gray-900 dark:text-white leading-none">Matheus Lôbo</h4>
+                            <span class="text-xs text-academic-blue dark:text-blue-400 font-semibold tracking-wider uppercase" data-i18n="role_title">Engenharia & Dados</span>
                         </div>
                     </div>
 
-                    <p class="text-gray-600 mb-6 leading-relaxed" data-i18n="footer_bio">
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed" data-i18n="footer_bio">
                         Conectando engenharia, ciência de dados e design acadêmico para resultados de alto impacto.
                     </p>
                     
@@ -345,40 +364,40 @@
                             <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                             LinkedIn
                         </a>
-                        <a href="http://lattes.cnpq.br/" target="_blank" class="flex items-center px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded hover:bg-gray-50 transition shadow-sm">
-                            <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        <a href="http://lattes.cnpq.br/" target="_blank" class="flex items-center px-4 py-2 bg-white dark:bg-slate-700 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-50 dark:hover:bg-slate-600 transition shadow-sm">
+                            <svg class="w-5 h-5 mr-2 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                             <span data-i18n="btn_lattes">Currículo Lattes</span>
                         </a>
                     </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
-                    <h5 class="font-bold text-gray-900 mb-2 text-center" data-i18n="support_title">Apoie o projeto</h5>
-                    <p class="text-sm text-gray-500 mb-4 text-center" data-i18n="support_desc">Gostou das ferramentas gratuitas? Pague-me um café ☕</p>
+                <div class="bg-white dark:bg-slate-700 p-6 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600">
+                    <h5 class="font-bold text-gray-900 dark:text-white mb-2 text-center" data-i18n="support_title">Apoie o projeto</h5>
+                    <p class="text-sm text-gray-500 dark:text-gray-300 mb-4 text-center" data-i18n="support_desc">Gostou das ferramentas gratuitas? Pague-me um café ☕</p>
                     <div class="flex flex-col sm:flex-row gap-4 items-center">
-                        <div class="bg-gray-200 w-24 h-24 flex-shrink-0 flex items-center justify-center rounded text-xs text-gray-500 text-center px-1">
+                        <div class="bg-gray-200 dark:bg-slate-600 w-24 h-24 flex-shrink-0 flex items-center justify-center rounded text-xs text-gray-500 dark:text-gray-300 text-center px-1">
                             [QR Code]
                         </div>
                         <div class="flex-grow w-full">
-                            <label class="text-xs font-semibold text-gray-500 uppercase" data-i18n="label_pix">Chave Pix</label>
+                            <label class="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase" data-i18n="label_pix">Chave Pix</label>
                             <div class="flex mt-1">
-                                <input type="text" value="pix_em_breve@matheuslobo.com" id="pix-key" readonly class="w-full bg-gray-50 border border-gray-300 text-gray-600 text-sm rounded-l focus:ring-academic-blue focus:border-academic-blue block p-2.5">
+                                <input type="text" value="pix_em_breve@matheuslobo.com" id="pix-key" readonly class="w-full bg-gray-50 dark:bg-slate-600 border border-gray-300 dark:border-gray-500 text-gray-600 dark:text-gray-200 text-sm rounded-l focus:ring-academic-blue focus:border-academic-blue block p-2.5">
                                 <button onclick="copyPix()" class="bg-academic-blue hover:bg-blue-800 text-white font-medium rounded-r text-sm px-4 py-2.5 text-center items-center flex transition" id="copy-btn">
                                     <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
                                     <span data-i18n="btn_copy">Copiar</span>
                                 </button>
                             </div>
-                            <p id="copy-feedback" class="text-xs text-green-600 mt-2 hidden font-medium" data-i18n="msg_copied">Chave copiada com sucesso!</p>
+                            <p id="copy-feedback" class="text-xs text-green-600 dark:text-green-400 mt-2 hidden font-medium" data-i18n="msg_copied">Chave copiada com sucesso!</p>
                         </div>
                     </div>
                 </div>
 
             </div>
             
-            <div class="border-t border-gray-200 mt-12 pt-8 text-center text-xs text-gray-500">
+            <div class="border-t border-gray-200 dark:border-gray-700 mt-12 pt-8 text-center text-xs text-gray-500 dark:text-gray-400">
                 <span data-i18n="footer_copyright">&copy; 2026 Matheus Lôbo. Todos os direitos reservados.</span>
                 <span class="mx-2 hidden sm:inline">•</span> <br class="sm:hidden"> 
-                <a href="mailto:matheuslobo.eng@gmail.com" class="hover:text-academic-blue transition font-medium">
+                <a href="mailto:matheuslobo.eng@gmail.com" class="hover:text-academic-blue dark:hover:text-blue-400 transition font-medium">
                     matheuslobo.eng@gmail.com
                 </a>
             </div>
@@ -386,7 +405,34 @@
     </footer>
 
     <script>
-        // --- 1. DICIONÁRIO DE TRADUÇÕES ---
+        // --- LOGICA DE TEMA (DARK MODE) ---
+        function toggleTheme() {
+            const html = document.documentElement;
+            const bulb = document.getElementById('bulb-icon');
+            
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+                bulb.classList.remove('text-yellow-300'); 
+                bulb.classList.add('text-gray-600');
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+                bulb.classList.remove('text-gray-600');
+                bulb.classList.add('text-yellow-300');
+            }
+        }
+
+        // Verifica preferência ao carregar
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            document.getElementById('bulb-icon').classList.add('text-yellow-300');
+            document.getElementById('bulb-icon').classList.remove('text-gray-600');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // --- TRADUÇÕES ---
         const translations = {
             pt: {
                 menu_services: "Serviços",
@@ -395,7 +441,7 @@
                 menu_contact: "Contato",
                 
                 hero_badge: "Acadêmico & Developer",
-                hero_title: 'Transformando dados complexos em <span class="text-academic-blue italic">visualizações precisas</span>.',
+                hero_title: 'Transformando dados complexos em <span class="text-academic-blue dark:text-blue-400 italic">visualizações precisas</span>.',
                 hero_desc: "Especialista em design de documentos LaTeX, visualização científica e automação de relatórios personalizados.",
                 btn_services: "Conheça meus serviços",
                 btn_tools: "Ferramentas Gratuitas",
@@ -460,7 +506,7 @@
                 menu_contact: "Contact",
                 
                 hero_badge: "Academic & Developer",
-                hero_title: 'Transforming complex data into <span class="text-academic-blue italic">precise visualizations</span>.',
+                hero_title: 'Transforming complex data into <span class="text-academic-blue dark:text-blue-400 italic">precise visualizations</span>.',
                 hero_desc: "Specialist in LaTeX document design, scientific visualization, and custom report automation.",
                 btn_services: "See my services",
                 btn_tools: "Free Tools",
@@ -520,15 +566,12 @@
             }
         };
 
-        // Estado Global do Idioma
         let currentLang = 'pt'; 
 
-        // --- 2. FUNÇÃO DE TROCA DE IDIOMA ---
         function setLanguage(lang) {
             currentLang = lang;
             const texts = translations[lang];
 
-            // 1. Atualiza textos com data-i18n
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (texts[key]) {
@@ -536,56 +579,45 @@
                 }
             });
 
-            // 2. Atualiza Placeholders e Options específicos
             const nameInput = document.getElementById('clientName');
             if(nameInput) nameInput.placeholder = lang === 'pt' ? "Seu nome aqui..." : "Your name here...";
 
-            // Atualiza opções do select manualmente
             const select = document.getElementById('interestSubject');
             if(select) {
                 select.options[0].text = texts.opt_general;
                 select.options[1].text = texts.opt_academic;
                 select.options[2].text = texts.opt_automation;
             }
-
-            // 3. Recalcula a mensagem do contato
             updateMessage();
         }
 
-        // --- 3. LÓGICA DO CONTATO (ATUALIZADA) ---
+        // --- FUNÇÕES AUXILIARES ---
         function updateMessage() {
             const nameInput = document.getElementById('clientName');
             const name = nameInput.value.trim() || (currentLang === 'pt' ? "[Seu Nome]" : "[Your Name]");
             const interest = document.getElementById('interestSubject').value;
-            
-            let message = "";
+            let contextText = "";
 
             if (currentLang === 'pt') {
-                let contextText = "Gostaria de saber mais sobre seus serviços.";
                 if (interest === 'academico') contextText = "Tenho interesse nos serviços de formatação LaTeX e criação de gráficos.";
-                if (interest === 'automacao') contextText = "Gostaria de cotar uma solução de automação de relatórios em Python.";
-                
-                message = `Olá Matheus, sou ${name} e cheguei aqui pelo seu site. ${contextText}`;
+                else if (interest === 'automacao') contextText = "Gostaria de cotar uma solução de automação de relatórios em Python.";
+                else contextText = "Gostaria de saber mais sobre seus serviços.";
+                document.getElementById('messagePreview').innerText = `Olá Matheus, sou ${name} e cheguei aqui pelo seu site. ${contextText}`;
             } else {
-                let contextText = "I would like to know more about your services.";
                 if (interest === 'academico') contextText = "I am interested in LaTeX formatting and graph creation services.";
-                if (interest === 'automacao') contextText = "I would like a quote for a Python report automation solution.";
-                
-                message = `Hello Matheus, I am ${name} and I found you through your website. ${contextText}`;
+                else if (interest === 'automacao') contextText = "I would like a quote for a Python report automation solution.";
+                else contextText = "I would like to know more about your services.";
+                document.getElementById('messagePreview').innerText = `Hello Matheus, I am ${name} and I found you through your website. ${contextText}`;
             }
-
-            document.getElementById('messagePreview').innerText = message;
         }
 
         function scrollToContact(interestType) {
             document.getElementById('fale-comigo').scrollIntoView({ behavior: 'smooth' });
-            const select = document.getElementById('interestSubject');
-            select.value = interestType;
+            document.getElementById('interestSubject').value = interestType;
             document.getElementById('clientName').focus();
             updateMessage(); 
         }
 
-        // --- 4. FUNÇÕES AUXILIARES ---
         const btn = document.getElementById('mobile-btn');
         const menu = document.getElementById('mobile-menu');
         btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
@@ -600,7 +632,6 @@
             const message = document.getElementById('messagePreview').innerText;
             const encodedMsg = encodeURIComponent(message);
             let url = "";
-            
             const myWhatsapp = "5511999999999"; 
             const myTelegram = "thematheusls";   
             const myEmail = "matheuslobo.eng@gmail.com";
@@ -618,18 +649,14 @@
             const copyText = document.getElementById("pix-key");
             const feedback = document.getElementById("copy-feedback");
             const btn = document.getElementById("copy-btn");
-            const btnSpan = btn.querySelector('span'); // Seleciona o span dentro do botão para mudar o texto
-            
+            const btnSpan = btn.querySelector('span');
             copyText.select();
             copyText.setSelectionRange(0, 99999);
             navigator.clipboard.writeText(copyText.value);
-            
             feedback.classList.remove("hidden");
             btn.classList.add("bg-green-600");
-            
             const originalText = btnSpan.innerText;
             btnSpan.innerText = currentLang === 'pt' ? "Copiado!" : "Copied!";
-            
             setTimeout(() => {
                 feedback.classList.add("hidden");
                 btn.classList.remove("bg-green-600");

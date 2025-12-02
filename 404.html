@@ -4,23 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erro 404 | Matheus Lôbo</title>
-    
-    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
     <meta name="description" content="Engenheiro e Especialista em formatação LaTeX, gráficos vetoriais (TikZ/Python) e automação de relatórios. Soluções para acadêmicos e empresas.">
     <meta name="keywords" content="LaTeX, TikZ, Python, Automação, Gráficos Científicos, Formatação ABNT, Matheus Lôbo">
     <meta name="author" content="Matheus Lôbo">
-    
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://matheuslobo.com/">
+    <meta property="og:title" content="Matheus Lôbo | Engenharia & Dados">
+    <meta property="og:description" content="Especialista em formatação LaTeX, gráficos vetoriais e automação de relatórios. Transforme seus dados em impacto.">
+    <meta property="og:image" content="https://thematheusls.github.io/thematheusls/assets/profile-pic2.png"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thematheusls.github.io/thematheusls/">
+    <meta property="twitter:title" content="Matheus Lôbo | Engenharia & Dados">
+    <meta property="twitter:description" content="Especialista em formatação LaTeX, gráficos vetoriais e automação de relatórios.">
+    <meta property="twitter:image" content="https://thematheusls.github.io/thematheusls/assets/profile-pic2.png">
+
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0BXV8JXT7G"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-0BXV8JXT7G');
+    </script>
+    
     <script>
         tailwind.config = {
+            darkMode: 'class', // ATIVA O MODO NOTURNO
             theme: {
                 extend: {
                     colors: {
-                        'paper': '#FDFBF7',
+                        'paper': '#F3F8FD',
                         'academic-blue': '#1B365D',
                         'text-dark': '#333333',
                         'text-light': '#555555',
@@ -35,25 +55,35 @@
         }
     </script>
 </head>
-<body class="bg-paper text-text-dark font-sans antialiased flex flex-col min-h-screen">
+<body class="bg-paper text-text-dark font-sans antialiased flex flex-col min-h-screen dark:bg-slate-900 dark:text-gray-100 transition-colors duration-300">
 
-    <header class="fixed w-full top-0 z-50 bg-paper/95 backdrop-blur border-b border-gray-200">
+    <header class="fixed w-full top-0 z-50 bg-paper/95 dark:bg-slate-900/95 backdrop-blur border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
-            <a href="index.html" class="font-serif text-2xl font-bold tracking-tight text-academic-blue">
+            <a href="index.html" class="font-serif text-2xl font-bold tracking-tight text-academic-blue dark:text-blue-400">
                 Matheus Lôbo<span class="text-gray-400">.</span>
             </a>
             
             <div class="flex items-center gap-6">
-                <div class="flex items-center space-x-2 border-r border-gray-300 pr-4">
-                    <button onclick="setLanguage('pt')" class="hover:opacity-75 transition" title="Português">
-                        <img src="https://flagcdn.com/w40/br.png" width="24" alt="Brasil">
+                
+                <div class="flex items-center space-x-4 border-r border-gray-300 dark:border-gray-700 pr-4">
+                    
+                    <button onclick="toggleTheme()" class="hover:opacity-75 transition focus:outline-none" title="Alternar Tema">
+                        <svg id="bulb-icon" class="w-6 h-6 text-gray-600 dark:text-yellow-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
                     </button>
-                    <button onclick="setLanguage('en')" class="hover:opacity-75 transition" title="English">
-                        <img src="https://flagcdn.com/w40/us.png" width="24" alt="USA">
-                    </button>
+
+                    <div class="flex items-center space-x-2">
+                        <button onclick="setLanguage('pt')" class="hover:opacity-75 transition" title="Português">
+                            <img src="https://flagcdn.com/w40/br.png" width="24" alt="Brasil">
+                        </button>
+                        <button onclick="setLanguage('en')" class="hover:opacity-75 transition" title="English">
+                            <img src="https://flagcdn.com/w40/us.png" width="24" alt="USA">
+                        </button>
+                    </div>
                 </div>
 
-                <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-academic-blue flex items-center transition" data-i18n="back_home">
+                <a href="index.html" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-academic-blue dark:hover:text-blue-400 flex items-center transition" data-i18n="back_home">
                     <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                     Voltar ao início
                 </a>
@@ -64,18 +94,18 @@
     <main class="flex-grow flex flex-col items-center justify-center text-center px-6 pt-20">
         
         <div class="mb-8 opacity-90 relative group">
-            <svg class="w-32 h-32 text-gray-200" fill="currentColor" viewBox="0 0 24 24">
+            <svg class="w-32 h-32 text-gray-200 dark:text-slate-700" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h5v5h5v11H6z"/>
             </svg>
-            <div class="absolute -bottom-2 -right-2 bg-paper rounded-full p-1">
+            <div class="absolute -bottom-2 -right-2 bg-paper dark:bg-slate-900 rounded-full p-1">
                 <svg class="w-12 h-12 text-red-500 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
             </div>
         </div>
 
-        <h1 class="font-serif text-6xl font-bold text-academic-blue mb-2">404</h1>
-        <h2 class="font-sans text-xl font-semibold text-gray-900 mb-6" data-i18n="title_404">Página não encontrada</h2>
+        <h1 class="font-serif text-6xl font-bold text-academic-blue dark:text-blue-400 mb-2">404</h1>
+        <h2 class="font-sans text-xl font-semibold text-gray-900 dark:text-white mb-6" data-i18n="title_404">Página não encontrada</h2>
         
         <div class="bg-gray-900 text-gray-300 font-mono text-sm p-4 rounded-lg shadow-inner text-left max-w-md w-full mb-8 overflow-x-auto border border-gray-700">
             <p><span class="text-green-400">user@matheus:~$</span> cd /website/page-requested</p>
@@ -83,23 +113,50 @@
             <p><span class="text-green-400">user@matheus:~$</span> <span class="animate-pulse">_</span></p>
         </div>
 
-        <p class="text-text-light max-w-lg mb-10" data-i18n="text_404">
+        <p class="text-text-light dark:text-gray-400 max-w-lg mb-10" data-i18n="text_404">
             Parece que o link que você tentou acessar foi movido, deletado ou nunca existiu (talvez seja apenas um erro de digitação no LaTeX?).
         </p>
 
-        <a href="index.html" class="bg-academic-blue text-white px-8 py-3 rounded hover:bg-[#152a4d] transition duration-300 font-medium shadow-lg hover:shadow-xl inline-flex items-center" data-i18n="btn_return">
+        <a href="index.html" class="bg-academic-blue dark:bg-blue-600 text-white px-8 py-3 rounded hover:bg-[#152a4d] dark:hover:bg-blue-700 transition duration-300 font-medium shadow-lg hover:shadow-xl inline-flex items-center" data-i18n="btn_return">
             Retornar à Home
         </a>
 
     </main>
 
-    <footer class="bg-paper border-t border-gray-200 py-8">
-        <div class="max-w-6xl mx-auto px-6 text-center text-xs text-gray-500">
+    <footer class="bg-paper dark:bg-slate-900 border-t border-gray-200 dark:border-gray-700 py-8 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6 text-center text-xs text-gray-500 dark:text-gray-400">
             &copy; 2026 Matheus Lôbo.
         </div>
     </footer>
 
     <script>
+        // --- LOGICA DARK MODE ---
+        function toggleTheme() {
+            const html = document.documentElement;
+            const bulb = document.getElementById('bulb-icon');
+            
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+                bulb.classList.remove('text-yellow-300'); 
+                bulb.classList.add('text-gray-600');
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+                bulb.classList.remove('text-gray-600');
+                bulb.classList.add('text-yellow-300');
+            }
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            document.getElementById('bulb-icon').classList.add('text-yellow-300');
+            document.getElementById('bulb-icon').classList.remove('text-gray-600');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // --- TRADUÇÕES ---
         const translations = {
             pt: {
                 back_home: `<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>Voltar ao início`,
