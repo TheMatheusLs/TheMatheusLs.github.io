@@ -1,164 +1,479 @@
-<!DOCTYPE HTML>
-<!--
-	Solid State by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Matheus Lôbo</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheus Lôbo | Dev</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <meta name="description" content="Engenheiro e Especialista em formatação LaTeX, gráficos vetoriais (TikZ/Python) e automação de relatórios. Soluções para acadêmicos e empresas.">
+    <meta name="keywords" content="LaTeX, TikZ, Python, Automação, Gráficos Científicos, Formatação ABNT, Matheus Lôbo">
+    <meta name="author" content="Matheus Lôbo">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'paper': '#FDFBF7',
+                        'academic-blue': '#1B365D',
+                        'text-dark': '#333333',
+                        'text-light': '#555555',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        .fade-anim { animation: fadeEffect 1.5s; }
+        @keyframes fadeEffect {
+            from {opacity: 0.4}
+            to {opacity: 1}
+        }
+    </style>
+</head>
+<body class="bg-paper text-text-dark font-sans antialiased selection:bg-academic-blue selection:text-white">
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+    <header class="fixed w-full top-0 z-50 bg-paper/95 backdrop-blur border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl font-bold tracking-tight text-academic-blue">
+                Matheus Lôbo<span class="text-gray-400">.</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#servicos" class="hover:text-academic-blue transition-colors">Serviços</a>
+                <a href="#ferramentas" class="hover:text-academic-blue transition-colors">Ferramentas</a>
+                <a href="em-breve.html" class="hover:text-academic-blue transition-colors">Blog</a>
+                <a href="#fale-comigo" class="hover:text-academic-blue transition-colors">Contato</a>
+            </nav>
+            <button id="mobile-btn" class="md:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-6 py-4 shadow-sm">
+            <nav class="flex flex-col space-y-4 text-center">
+                <a href="#servicos" class="block py-2 text-gray-600 hover:text-academic-blue">Serviços</a>
+                <a href="#ferramentas" class="block py-2 text-gray-600 hover:text-academic-blue">Ferramentas</a>
+                <a href="em-breve.html" class="block py-2 text-gray-600 hover:text-academic-blue">Blog</a>
+                <a href="#fale-comigo" class="block py-2 text-gray-600 hover:text-academic-blue">Contato</a>
+            </nav>
+        </div>
+    </header>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html"><img src="images\simbolo_branco.svg" alt="Nome do Logo"></a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+    <main class="pt-20">
 
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Principal</a></li>
-								<li><a href="page_curriculum.html">Currículo</a></li>
-								<li><a href="allProjects.html">Projetos</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
+        <section class="min-h-[85vh] flex flex-col justify-center items-center text-center px-4 max-w-4xl mx-auto">
+            <span class="mb-4 px-3 py-1 bg-gray-100 rounded-full text-xs font-semibold tracking-wider text-gray-500 uppercase">
+                Acadêmico & Developer
+            </span>
+            <h1 class="font-serif text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                Transformando dados complexos em <span class="text-academic-blue italic">visualizações precisas</span>.
+            </h1>
+            <p class="text-lg md:text-xl text-text-light max-w-2xl mb-10 leading-relaxed">
+                Especialista em design de documentos LaTeX, visualização científica e automação de relatórios personalizados.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#servicos" class="bg-academic-blue text-white px-8 py-3 rounded hover:bg-[#152a4d] transition duration-300 font-medium shadow-lg hover:shadow-xl">
+                    Conheça meus serviços
+                </a>
+                <a href="#ferramentas" class="bg-white border border-gray-300 text-gray-700 px-8 py-3 rounded hover:bg-gray-50 transition duration-300 font-medium flex items-center justify-center">
+                    Ferramentas Gratuitas
+                </a>
+            </div>
+        </section>
 
-				<!-- Banner -->
-				<section id="banner">
-					<div class="inner">
-						<div class="logo"><img src="images\simbolo_branco.svg" alt="Nome do Logo">
-						</div>
-						<h2>Matheus Lôbo</h2>
-						<p>Engenheiro Mecatrônico<br>Mestre em Engenharia Elétrica</p>
-					</div>
-				</section>
+        <section id="servicos" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="font-serif text-3xl font-bold text-gray-900 mb-16 text-center">Soluções Especializadas</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-24">
+                    <div class="relative bg-gray-50 rounded-lg border border-gray-100 shadow-sm overflow-hidden group h-80 order-1">
+                        
+                        <div class="mySlides fade-anim w-full h-full flex flex-col items-center justify-center bg-white p-4">
+                            <div class="w-full h-56 flex items-center justify-center mb-2">
+                                <img src="./assets/raman.svg" alt="Gráfico Raman 3D" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <p class="text-xs text-gray-500 font-mono">Exemplo 1 - Modelagem 3D: Efeito Raman em Fibra Óptica</p>
+                        </div>
 
-				<!-- Wrapper -->
-					<section id="wrapper">
+                        <div class="mySlides fade-anim hidden w-full h-full flex flex-col items-center justify-center bg-white p-4">
+                            <div class="w-full h-56 flex items-center justify-center mb-2">
+                                <img src="./assets/circuito_tikz.svg" alt="Circuito Elétrico" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <p class="text-xs text-gray-500 font-mono">Exemplo 2 - Esquemático Elétrico Profissional (Circuitikz)</p>
+                        </div>
 
-						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/profile-pic.png" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Trajetória Acadêmica e Profissional</h2>
-										<p>Com minha formação em Engenharia Mecatrônica pelo Centro Universitário Tiradentes e Mestrado em Engenharia Elétrica pela UFPE, somado à minha experiência em TI e docência universitária, tenho muito a oferecer para seu projeto. Conheça meu currículo completo e descubra como posso contribuir para seu sucesso.</p>
-										<a href="page_curriculum.html" class="special">Conheça mais</a>
-									</div>
-								</div>
-							</section>
+                        <div class="mySlides fade-anim hidden w-full h-full flex flex-col items-center justify-center bg-white p-4">
+                            <div class="w-full h-56 flex items-center justify-center mb-2">
+                                <img src="./assets/fluxo_ML.svg" alt="Fluxograma Machine Learning" class="max-h-full max-w-full object-contain">
+                            </div>
+                            <p class="text-xs text-gray-500 font-mono">Exemplo 3 - Fluxograma de Machine Learning (TikZ)</p>
+                        </div>
 
-						<!-- Two -->
-							<section id="two" class="wrapper alt spotlight style2">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/profile-pic2.png" alt="" /></a>
-									<div class="content">
-										<h2 class="major">Explorando Interesses e Habilidades</h2>
-										<p>Eu adoro passar meu tempo livre praticando programação e desenvolvendo projetos criativos. Além disso, sou um grande entusiasta da fotografia e adoro explorar o universo através da astronomia. Possuo habilidades criativas e uma mente analítica que me permitem abordar problemas de maneira inovadora e eficaz. Estou sempre em busca de novos desafios e oportunidades de aprendizado.</p>
-										<a href="#" class="special">Conheça mais</a>
-									</div>
-								</div>
-							</section>
+                        <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-1 shadow text-gray-600 hover:text-academic-blue" onclick="plusSlides(-1)">❮</button>
+                        <button class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-1 shadow text-gray-600 hover:text-academic-blue" onclick="plusSlides(1)">❯</button>
+                    </div>
+                    
+                    <div class="flex flex-col h-full justify-center order-2">
+                        <span class="text-academic-blue font-bold tracking-wider text-xs uppercase mb-2">Para Pesquisadores</span>
+                        <h3 class="font-serif text-2xl font-bold mb-4">Produção Acadêmica Profissional</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            A aceitação de artigos científicos depende da clareza visual. Transformo rascunhos em figuras prontas para publicação em journals de alto impacto.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-sm text-gray-600"><svg class="w-5 h-5 text-academic-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Formatação de Teses e Dissertações (ABNT/APA)</li>
+                            <li class="flex items-center text-sm text-gray-600"><svg class="w-5 h-5 text-academic-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Criação de gráficos vetoriais (qualidade máxima em qualquer zoom)</li>
+                            <li class="flex items-center text-sm text-gray-600"><svg class="w-5 h-5 text-academic-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Consultoria e Revisão em LaTeX</li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                            <button onclick="scrollToContact('academico')" class="bg-academic-blue text-white px-6 py-3 rounded text-center hover:bg-[#152a4d] transition shadow-md hover:shadow-lg font-medium flex-1 sm:flex-none">
+                                Orçamento Acadêmico
+                            </button>
+                            <a href="em-breve.html" class="border border-academic-blue text-academic-blue px-6 py-3 rounded text-center hover:bg-blue-50 transition font-medium flex items-center justify-center flex-1 sm:flex-none group">
+                                <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                                Ver Portfólio
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-						<!-- Four -->
-							<section id="three" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Projetos e Artigos</h2>
-									<p>Explore meu portfólio e descubra meus projetos e artigos. Uma coleção de trabalhos que refletem minhas habilidades e experiências.</p>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Marvin: Um Oponente Robótico</h3>
-											<p>O projeto de TCC que desenvolvi resultou em Marvin, um robô especializado em jogar damas contra um jogador humano. Com habilidades em programação e conhecimentos em eletrônica, desenvolvi uma solução inovadora para um jogo tradicional, que pode ser utilizado para fins educativos ou de entretenimento.</p>
-											<a href="#" class="special">Saiba Mais</a>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Router CNC</h3>
-											<p>Juntamente com dois amigos, tive a oportunidade de desenvolver uma router CNC capaz de realizar usinagem em materiais como acrílico, madeira e metal. O projeto foi desafiador e exigiu muita dedicação, mas o resultado final foi extremamente gratificante. Ficou curioso para saber mais?</p>
-											<a href="#" class="special">Saiba Mais</a>
-										</article>
-									</section>
-									<ul class="actions">
-										<li><a href="allProjects.html" class="button">explorar tudo</a></li>
-									</ul>
-								</div>
-							</section>
+                <div class="w-full h-px bg-gray-100 my-12 md:hidden"></div>
 
-					</section>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="flex flex-col h-full justify-center order-2 md:order-1">
+                        <span class="text-green-700 font-bold tracking-wider text-xs uppercase mb-2">Para Empresas & Laboratórios</span>
+                        <h3 class="font-serif text-2xl font-bold mb-4">Automação de Relatórios em Escala</h3>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Deixe o trabalho manual de lado. Desenvolvo scripts em Python que processam seus dados brutos e geram centenas de relatórios PDF personalizados instantaneamente.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-sm text-gray-600"><svg class="w-5 h-5 text-green-700 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Geração em massa a partir de Excel/CSV/SQL</li>
+                            <li class="flex items-center text-sm text-gray-600"><svg class="w-5 h-5 text-green-700 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Layouts consistentes e à prova de erros humanos</li>
+                            <li class="flex items-center text-sm text-gray-600"><svg class="w-5 h-5 text-green-700 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Integração com visualização de dados (Matplotlib/Pandas)</li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                            <button onclick="scrollToContact('automacao')" class="bg-green-700 text-white px-6 py-3 rounded text-center hover:bg-green-800 transition shadow-md hover:shadow-lg font-medium flex-1 sm:flex-none">
+                                Cotar Automação
+                            </button>
+                            <a href="em-breve.html" class="border border-green-700 text-green-700 px-6 py-3 rounded text-center hover:bg-green-50 transition font-medium flex items-center justify-center flex-1 sm:flex-none group">
+                                <svg class="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                                Exemplos de Relatórios
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg border border-gray-200 shadow-sm p-8 h-80 flex items-center justify-center order-1 md:order-2 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-green-50 rounded-bl-full opacity-50"></div>
+                        <div class="flex items-center space-x-4 relative z-10">
+                            <div class="flex flex-col items-center">
+                                <div class="w-16 h-16 bg-gray-100 rounded border border-gray-300 flex items-center justify-center text-gray-500 mb-2">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+                                </div>
+                                <span class="text-xs font-mono text-gray-400">dados.csv</span>
+                            </div>
+                            <div class="text-green-600 animate-pulse">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="relative">
+                                    <div class="w-14 h-16 bg-academic-blue rounded border border-blue-800 absolute -top-2 -right-2 opacity-50"></div>
+                                    <div class="w-14 h-16 bg-academic-blue rounded border border-blue-800 absolute -top-1 -right-1 opacity-75"></div>
+                                    <div class="w-14 h-16 bg-academic-blue rounded border border-blue-800 flex items-center justify-center text-white relative z-10">
+                                        <span class="font-serif font-bold text-lg">PDF</span>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-mono text-gray-400 mt-3">Relatórios</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Entre em Contato</h2>
-							<p>Caso tenha interesse em saber mais sobre meus projetos e habilidades, sinta-se à vontade para entrar em contato através do meu e-mail ou das minhas redes sociais listadas abaixo. Será um prazer compartilhar mais informações e conhecer novas oportunidades. Além disso, não deixe de me seguir nas redes para acompanhar as atualizações sobre meus projetos e ideias.</p>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Nome</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">E-mail</label>
-										<input type="email" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Mensagem</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Enviar Mensagem" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-								<!--
-								<li class="icon solid fa-home">
-									Untitled Inc<br />
-									1234 Somewhere Road Suite #2894<br />
-									Nashville, TN 00000-0000
-								</li>
-								<li class="icon solid fa-phone">(000) 000-0000</li>-->
-								<li class="icon solid fa-envelope"><a href="#">matheuslobo.eng@gmail.com</a></li>
-								<li class="icon brands fa-twitter"><a href="https://twitter.com/thematheusls">Meu  Twitter: @thematheusls</a></li>
-								<li class="icon brands fa-telegram"><a href="https://telegram.me/thematheusls">Meu Instagram: @thematheusls</a></li>
-								<li class="icon brands fa-instagram"><a href="https://www.instagram.com/thematheusls/">Meu telegram: @thematheusls</a></li>
-								<li class="icon brands fa-github"><a href="https://github.com/thematheusls/">Meu Github: @thematheusls</a></li>
-								<li class="icon brands fa-youtube"><a href="https://www.youtube.com/thematheusls">Meu Youtube: @thematheusls</a></li>
-								<li class="icon brands fa-tiktok"><a href="https://www.tiktok.com/@thematheusls">Meu TikTok: @thematheusls</a></li>
-								<li>Todas as redes... 😎</li>
-							</ul>
-							<ul class="copyright">
-								<li>Matheus Lôbo</li>
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
+        <section id="ferramentas" class="py-20 bg-paper">
+            <div class="max-w-6xl mx-auto px-6 text-center">
+                <h2 class="font-serif text-3xl font-bold text-gray-900 mb-6">Ferramentas Gratuitas</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-12">
+                    Utilitários desenvolvidos para facilitar a vida acadêmica.
+                </p>
 
-			</div>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition text-left group flex flex-col h-full">
+                        <div class="h-12 w-12 bg-blue-50 text-academic-blue rounded flex items-center justify-center mb-4 group-hover:bg-academic-blue group-hover:text-white transition">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Img to Circuitikz</h3>
+                        <p class="text-sm text-gray-500 mb-6 flex-grow">
+                            Converta imagens de circuitos desenhados à mão em código LaTeX automaticamente utilizando IA.
+                        </p>
+                        <a href="em-breve.html" class="text-academic-blue text-sm font-bold hover:underline">Acessar Ferramenta →</a>
+                    </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+                    <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition text-left group flex flex-col h-full">
+                        <div class="h-12 w-12 bg-green-50 text-green-700 rounded flex items-center justify-center mb-4 group-hover:bg-green-700 group-hover:text-white transition">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Tabela to LaTeX</h3>
+                        <p class="text-sm text-gray-500 mb-6 flex-grow">
+                            Cole dados do Excel ou CSV e gere instantaneamente o código de tabelas LaTeX formatadas (Booktabs).
+                        </p>
+                        <a href="em-breve.html" class="text-academic-blue text-sm font-bold hover:underline">Acessar Ferramenta →</a>
+                    </div>
 
-	</body>
+                    <div class="bg-academic-blue p-8 rounded-lg shadow-sm border border-academic-blue hover:shadow-lg transition text-left flex flex-col h-full relative overflow-hidden">
+                        <div class="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 rounded-full bg-white opacity-10"></div>
+                        <div class="h-12 w-12 bg-white/10 text-white rounded flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2 text-white">Precisa de algo específico?</h3>
+                        <p class="text-sm text-blue-100 mb-6 flex-grow">
+                            Tem uma ideia de ferramenta ou precisa de uma automação especial? Entre em contato para um orçamento.
+                        </p>
+                        <button onclick="scrollToContact('geral')" class="bg-white text-academic-blue text-sm font-bold py-2 px-4 rounded text-center hover:bg-gray-100 transition w-full">Solicitar Orçamento</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="fale-comigo" class="py-20 bg-white border-t border-gray-100">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="font-serif text-3xl font-bold text-gray-900 mb-4">Vamos Conversar?</h2>
+                    <p class="text-gray-600">Escolha seu canal preferido para falarmos sobre seu projeto.</p>
+                </div>
+
+                <div class="bg-paper p-8 rounded-2xl border border-gray-200 shadow-sm">
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Qual seu nome?</label>
+                            <input type="text" id="clientName" placeholder="Seu nome aqui..." oninput="updateMessage()" class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-academic-blue focus:border-academic-blue outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Assunto de Interesse</label>
+                            <select id="interestSubject" onchange="updateMessage()" class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-academic-blue outline-none bg-white">
+                                <option value="geral">Orçamento Geral</option>
+                                <option value="academico">Formatação & LaTeX</option>
+                                <option value="automacao">Automação & Python</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-4 rounded border border-gray-200 mb-8">
+                        <label class="block text-xs font-bold text-gray-400 uppercase mb-2">Mensagem que será enviada:</label>
+                        <p id="messagePreview" class="text-gray-600 italic text-sm">Olá Matheus, sou [Seu Nome] e cheguei aqui pelo seu site. Gostaria de saber mais sobre seus serviços.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <a href="javascript:void(0)" onclick="sendMessage('whatsapp')" class="flex flex-col items-center justify-center p-4 rounded border border-green-500 text-green-600 hover:bg-green-50 transition group">
+                            <svg class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            <span class="text-xs font-bold">WhatsApp</span>
+                        </a>
+
+                        <a href="javascript:void(0)" onclick="sendMessage('telegram')" class="flex flex-col items-center justify-center p-4 rounded border border-blue-400 text-blue-500 hover:bg-blue-50 transition group">
+                            <svg class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.68c.223-.198-.054-.306-.346-.108l-6.4 4.02-2.76-.86c-.6-.188-.612-.602.126-.892l10.766-4.154c.498-.19.934.125.75.919z"/></svg>
+                            <span class="text-xs font-bold">Telegram</span>
+                        </a>
+
+                        <a href="javascript:void(0)" onclick="sendMessage('instagram')" class="flex flex-col items-center justify-center p-4 rounded border border-pink-500 text-pink-600 hover:bg-pink-50 transition group">
+                            <svg class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <span class="text-xs font-bold">Instagram</span>
+                        </a>
+
+                        <a href="javascript:void(0)" onclick="sendMessage('email')" class="flex flex-col items-center justify-center p-4 rounded border border-gray-400 text-gray-600 hover:bg-gray-50 transition group">
+                            <svg class="w-8 h-8 mb-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <span class="text-xs font-bold">E-mail</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-100 border-t border-gray-200 py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                
+                <div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="./assets/profile-pic2.png" alt="Matheus Lôbo" class="w-16 h-16 rounded-full object-cover border-2 border-white shadow-md">
+                        <div>
+                            <h4 class="font-serif text-2xl font-bold text-gray-900 leading-none">Matheus Lôbo</h4>
+                            <span class="text-xs text-academic-blue font-semibold tracking-wider uppercase">Engenharia & Dados</span>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Conectando engenharia, ciência de dados e design acadêmico para resultados de alto impacto.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://www.linkedin.com/in/matheus-lobo-dos-santos/" target="_blank" class="flex items-center px-4 py-2 bg-[#0077b5] text-white rounded hover:bg-[#006097] transition shadow-sm">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="http://lattes.cnpq.br/" target="_blank" class="flex items-center px-4 py-2 bg-white border border-gray-300 text-gray-700 rounded hover:bg-gray-50 transition shadow-sm">
+                            <svg class="w-5 h-5 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            Currículo Lattes
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <h5 class="font-bold text-gray-900 mb-2 text-center">Apoie o projeto</h5>
+                    <p class="text-sm text-gray-500 mb-4 text-center">Gostou das ferramentas gratuitas? Pague-me um café ☕</p>
+                    <div class="flex flex-col sm:flex-row gap-4 items-center">
+                        <div class="bg-gray-200 w-24 h-24 flex-shrink-0 flex items-center justify-center rounded text-xs text-gray-500 text-center px-1">
+                            [QR Code]
+                        </div>
+                        <div class="flex-grow w-full">
+                            <label class="text-xs font-semibold text-gray-500 uppercase">Chave Pix</label>
+                            <div class="flex mt-1">
+                                <input type="text" value="pix_em_breve@matheuslobo.com" id="pix-key" readonly class="w-full bg-gray-50 border border-gray-300 text-gray-600 text-sm rounded-l focus:ring-academic-blue focus:border-academic-blue block p-2.5">
+                                <button onclick="copyPix()" class="bg-academic-blue hover:bg-blue-800 text-white font-medium rounded-r text-sm px-4 py-2.5 text-center items-center flex transition" id="copy-btn">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                                    Copiar
+                                </button>
+                            </div>
+                            <p id="copy-feedback" class="text-xs text-green-600 mt-2 hidden font-medium">Chave copiada com sucesso!</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-gray-200 mt-12 pt-8 text-center text-xs text-gray-500">
+                <span>&copy; 2026 Matheus Lôbo</span>
+                <span class="mx-2 hidden sm:inline">•</span> <br class="sm:hidden">
+                <span>Todos os direitos reservados</span>
+                <span class="mx-2 hidden sm:inline">•</span> <br class="sm:hidden"> <a href="mailto:matheuslobo.eng@gmail.com" class="hover:text-academic-blue transition font-medium">
+                    matheuslobo.eng@gmail.com
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile
+        const btn = document.getElementById('mobile-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // --- LÓGICA DE CONTATO DINÂMICO ---
+        
+        // 1. Função chamada pelos botões de orçamento
+        function scrollToContact(interestType) {
+            // Rola até a seção
+            document.getElementById('fale-comigo').scrollIntoView({ behavior: 'smooth' });
+            
+            // Define o select para o tipo correto
+            const select = document.getElementById('interestSubject');
+            select.value = interestType;
+            
+            // Foca no nome
+            document.getElementById('clientName').focus();
+            
+            // Atualiza o texto imediatamente
+            updateMessage();
+        }
+
+        // 2. Atualiza o texto do preview em tempo real
+        function updateMessage() {
+            const name = document.getElementById('clientName').value.trim() || "[Seu Nome]";
+            const interest = document.getElementById('interestSubject').value;
+            let contextText = "";
+
+            if (interest === 'academico') {
+                contextText = "Tenho interesse nos serviços de formatação LaTeX e criação de gráficos.";
+            } else if (interest === 'automacao') {
+                contextText = "Gostaria de cotar uma solução de automação de relatórios em Python.";
+            } else {
+                contextText = "Gostaria de saber mais sobre seus serviços.";
+            }
+
+            const finalMessage = `Olá Matheus, sou ${name} e cheguei aqui pelo seu site. ${contextText}`;
+            document.getElementById('messagePreview').innerText = finalMessage;
+        }
+
+        // 3. Envia para a plataforma escolhida
+        function sendMessage(platform) {
+            const message = document.getElementById('messagePreview').innerText;
+            const encodedMsg = encodeURIComponent(message);
+            let url = "";
+
+            // PREENCHA AQUI SEUS DADOS REAIS
+            const myWhatsapp = "5511999999999"; // Apenas números
+            const myTelegram = "thematheusls";   // Sem @
+            const myEmail = "matheuslobo.eng@gmail.com";
+            const myInsta = "thematheusls"; 
+
+            if (platform === 'whatsapp') {
+                url = `https://wa.me/${myWhatsapp}?text=${encodedMsg}`;
+            } else if (platform === 'telegram') {
+                url = `https://t.me/${myTelegram}`; // Telegram não suporta msg pré-definida facilmente via link web, vai p/ chat
+            } else if (platform === 'email') {
+                url = `mailto:${myEmail}?subject=Contato via Site&body=${encodedMsg}`;
+            } else if (platform === 'instagram') {
+                url = `https://instagram.com/${myInsta}`; // Instagram vai para o perfil
+            }
+
+            window.open(url, '_blank');
+        }
+
+
+        // --- OUTROS SCRIPTS (PIX E CARROSSEL) ---
+        function copyPix() {
+            const copyText = document.getElementById("pix-key");
+            const feedback = document.getElementById("copy-feedback");
+            const btn = document.getElementById("copy-btn");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            feedback.classList.remove("hidden");
+            btn.classList.add("bg-green-600");
+            btn.innerHTML = "Copiado!";
+            setTimeout(() => {
+                feedback.classList.add("hidden");
+                btn.classList.remove("bg-green-600");
+                btn.innerHTML = `<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>Copiar`;
+            }, 3000);
+        }
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) { showSlides(slideIndex += n); }
+        setInterval(function() { plusSlides(1); }, 5000); 
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.add('hidden');  
+                slides[i].classList.remove('flex'); 
+            }
+            slides[slideIndex-1].classList.remove('hidden');  
+            slides[slideIndex-1].classList.add('flex'); 
+        }
+
+        // Adicione isso ao final do seu script para fechar o menu ao clicar num link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
 </html>

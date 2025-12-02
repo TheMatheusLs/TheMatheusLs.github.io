@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheus Lôbo | Dev</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <meta name="description" content="Engenheiro e Especialista em formatação LaTeX, gráficos vetoriais (TikZ/Python) e automação de relatórios. Soluções para acadêmicos e empresas.">
+    <meta name="keywords" content="LaTeX, TikZ, Python, Automação, Gráficos Científicos, Formatação ABNT, Matheus Lôbo">
+    <meta name="author" content="Matheus Lôbo">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'paper': '#FDFBF7',
+                        'academic-blue': '#1B365D',
+                        'text-dark': '#333333',
+                        'text-light': '#555555',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                        mono: ['"Fira Code"', 'monospace'], /* Fonte mono para o "código" */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-paper text-text-dark font-sans antialiased flex flex-col min-h-screen">
+
+    <header class="fixed w-full top-0 z-50 bg-paper/95 backdrop-blur border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-2xl font-bold tracking-tight text-academic-blue">
+                Matheus Lôbo<span class="text-gray-400">.</span>
+            </a>
+            <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-academic-blue flex items-center transition">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Voltar ao início
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col items-center justify-center text-center px-6 pt-20">
+        
+        <div class="mb-8 opacity-90 relative group">
+            <svg class="w-32 h-32 text-gray-200" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 2l5 5h-5V4zM6 20V4h5v5h5v11H6z"/>
+            </svg>
+            <div class="absolute -bottom-2 -right-2 bg-paper rounded-full p-1">
+                <svg class="w-12 h-12 text-red-500 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <h1 class="font-serif text-6xl font-bold text-academic-blue mb-2">404</h1>
+        <h2 class="font-sans text-xl font-semibold text-gray-900 mb-6">Página não encontrada</h2>
+        
+        <div class="bg-gray-900 text-gray-300 font-mono text-sm p-4 rounded-lg shadow-inner text-left max-w-md w-full mb-8 overflow-x-auto border border-gray-700">
+            <p><span class="text-green-400">user@matheus:~$</span> cd /website/pagina-solicitada</p>
+            <p class="text-red-400">bash: cd: /website/pagina-solicitada: No such file or directory</p>
+            <p><span class="text-green-400">user@matheus:~$</span> <span class="animate-pulse">_</span></p>
+        </div>
+
+        <p class="text-text-light max-w-lg mb-10">
+            Parece que o link que você tentou acessar foi movido, deletado ou nunca existiu (talvez seja apenas um erro de digitação no LaTeX?).
+        </p>
+
+        <a href="index.html" class="bg-academic-blue text-white px-8 py-3 rounded hover:bg-[#152a4d] transition duration-300 font-medium shadow-lg hover:shadow-xl inline-flex items-center">
+            Retornar à Home
+        </a>
+
+    </main>
+
+    <footer class="bg-paper border-t border-gray-200 py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center text-xs text-gray-500">
+            &copy; 2026 Matheus Lôbo.
+        </div>
+    </footer>
+
+</body>
+</html>

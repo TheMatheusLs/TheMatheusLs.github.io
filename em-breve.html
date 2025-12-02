@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheus Lôbo | Dev</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <meta name="description" content="Engenheiro e Especialista em formatação LaTeX, gráficos vetoriais (TikZ/Python) e automação de relatórios. Soluções para acadêmicos e empresas.">
+    <meta name="keywords" content="LaTeX, TikZ, Python, Automação, Gráficos Científicos, Formatação ABNT, Matheus Lôbo">
+    <meta name="author" content="Matheus Lôbo">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'paper': '#FDFBF7',
+                        'academic-blue': '#1B365D',
+                        'text-dark': '#333333',
+                        'text-light': '#555555',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-paper text-text-dark font-sans antialiased flex flex-col min-h-screen">
+
+    <header class="fixed w-full top-0 z-50 bg-paper/95 backdrop-blur border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-2xl font-bold tracking-tight text-academic-blue">
+                Matheus Lôbo<span class="text-gray-400">.</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="index.html#servicos" class="hover:text-academic-blue transition-colors">Serviços</a>
+                <a href="index.html#ferramentas" class="hover:text-academic-blue transition-colors">Ferramentas</a>
+                <a href="index.html#blog" class="hover:text-academic-blue transition-colors">Blog</a>
+                <a href="index.html#fale-comigo" class="hover:text-academic-blue transition-colors">Contato</a>
+            </nav>
+            <a href="index.html" class="md:hidden text-gray-700 focus:outline-none flex items-center">
+                <span class="text-xs font-semibold mr-1">Voltar</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow flex flex-col items-center justify-center text-center px-6 pt-20">
+        
+        <div class="relative mb-8">
+            <div class="absolute inset-0 bg-blue-100 rounded-full animate-ping opacity-25"></div>
+            <div class="relative bg-white p-6 rounded-full shadow-sm border border-gray-100">
+                <svg class="w-16 h-16 text-academic-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+            </div>
+        </div>
+
+        <span class="px-3 py-1 bg-gray-100 rounded-full text-xs font-semibold tracking-wider text-gray-500 uppercase mb-4">
+            Status 202: Processing
+        </span>
+        
+        <h1 class="font-serif text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Compilando esta página...
+        </h1>
+        
+        <p class="text-lg text-text-light max-w-xl mb-10 leading-relaxed">
+            Assim como um bom artigo acadêmico ou um código robusto, esta seção está sendo desenvolvida com atenção aos detalhes. Estará disponível em breve.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="index.html" class="bg-academic-blue text-white px-8 py-3 rounded hover:bg-[#152a4d] transition duration-300 font-medium shadow-lg hover:shadow-xl flex items-center justify-center">
+                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                Voltar ao Início
+            </a>
+            <a href="index.html#fale-comigo" class="bg-white border border-gray-300 text-gray-700 px-8 py-3 rounded hover:bg-gray-50 transition duration-300 font-medium flex items-center justify-center">
+                Precisa de algo urgente?
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="bg-paper border-t border-gray-200 py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center text-xs text-gray-500">
+            &copy; 2026 Matheus Lôbo. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
