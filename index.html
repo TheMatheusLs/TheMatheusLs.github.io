@@ -160,9 +160,9 @@
 
                         <div class="mySlides fade-anim hidden w-full h-full flex flex-col items-center justify-center bg-white p-4">
                             <div class="w-full h-56 flex items-center justify-center mb-2">
-                                <img src="./assets/fluxo_ML.svg" alt="Fluxograma ML" class="max-h-full max-w-full object-contain">
+                                <img src="./assets/caminho.svg" alt="Fluxograma ML" class="max-h-full max-w-full object-contain">
                             </div>
-                            <p class="text-xs text-gray-500 font-mono" data-i18n="caption_ml">Exemplo 3 - Fluxograma</p>
+                            <p class="text-xs text-gray-500 font-mono" data-i18n="caption_ml">Exemplo 3 - Contribuições em um Caminho Óptico</p>
                         </div>
 
                         <button class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-1 shadow text-gray-600 hover:text-academic-blue" onclick="plusSlides(-1)">❮</button>
@@ -199,7 +199,7 @@
                         <span class="text-green-700 dark:text-green-400 font-bold tracking-wider text-xs uppercase mb-2" data-i18n="badge_companies">Para Empresas & Laboratórios</span>
                         <h3 class="font-serif text-2xl font-bold mb-4 text-gray-900 dark:text-white" data-i18n="title_automation">Automação de Relatórios em Escala</h3>
                         <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed" data-i18n="desc_automation">
-                            Deixe o trabalho manual de lado. Desenvolvo scripts em Python que processam seus dados brutos e geram centenas de relatórios.
+                            Deixe o trabalho manual de lado. Desenvolvo scripts que processam seus dados brutos e geram centenas de relatórios.
                         </p>
                         <ul class="space-y-3 mb-8 text-gray-600 dark:text-gray-300">
                             <li class="flex items-center text-sm"><svg class="w-5 h-5 text-green-700 dark:text-green-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span data-i18n="list_bulk">Geração em massa</span></li>
@@ -462,7 +462,7 @@
                 
                 badge_companies: "Para Empresas & Laboratórios",
                 title_automation: "Automação de Relatórios em Escala",
-                desc_automation: "Deixe o trabalho manual de lado. Desenvolvo scripts em Python que processam seus dados brutos e geram centenas de relatórios PDF personalizados instantaneamente.",
+                desc_automation: "Deixe o trabalho manual de lado. Desenvolvo scripts que processam seus dados brutos e geram centenas de relatórios PDF personalizados instantaneamente.",
                 list_bulk: "Geração em massa a partir de Excel/CSV/SQL",
                 list_layouts: "Layouts consistentes e à prova de erros humanos",
                 list_integration: "Integração com visualização de dados (Matplotlib/Pandas)",
@@ -527,7 +527,7 @@
                 
                 badge_companies: "For Companies & Labs",
                 title_automation: "Report Automation at Scale",
-                desc_automation: "Ditch manual work. I develop Python scripts that process raw data and generate hundreds of personalized PDF reports instantly.",
+                desc_automation: "Ditch manual work. I develop scripts that process raw data and generate hundreds of personalized PDF reports instantly.",
                 list_bulk: "Bulk generation from Excel/CSV/SQL",
                 list_layouts: "Consistent layouts, human-error proof",
                 list_integration: "Integration with data visualization (Matplotlib/Pandas)",
@@ -600,12 +600,12 @@
 
             if (currentLang === 'pt') {
                 if (interest === 'academico') contextText = "Tenho interesse nos serviços de formatação LaTeX e criação de gráficos.";
-                else if (interest === 'automacao') contextText = "Gostaria de cotar uma solução de automação de relatórios em Python.";
+                else if (interest === 'automacao') contextText = "Gostaria de cotar uma solução de automação de relatórios.";
                 else contextText = "Gostaria de saber mais sobre seus serviços.";
                 document.getElementById('messagePreview').innerText = `Olá Matheus, sou ${name} e cheguei aqui pelo seu site. ${contextText}`;
             } else {
                 if (interest === 'academico') contextText = "I am interested in LaTeX formatting and graph creation services.";
-                else if (interest === 'automacao') contextText = "I would like a quote for a Python report automation solution.";
+                else if (interest === 'automacao') contextText = "I would like a quote for a report automation solution.";
                 else contextText = "I would like to know more about your services.";
                 document.getElementById('messagePreview').innerText = `Hello Matheus, I am ${name} and I found you through your website. ${contextText}`;
             }
