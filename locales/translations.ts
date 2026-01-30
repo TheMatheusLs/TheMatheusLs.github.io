@@ -80,6 +80,12 @@ export const translations = {
         compiling_desc: 'Assim como um bom artigo acadêmico ou um código robusto, esta seção está sendo desenvolvida com atenção aos detalhes. Estará disponível em breve.',
         btn_home: 'Voltar ao Início',
         btn_urgent: 'Precisa de algo urgente?',
+
+        // 404 Page
+        title_404: 'Página não encontrada',
+        text_404: 'Parece que o link que você tentou acessar foi movido, deletado ou nunca existiu (talvez seja apenas um erro de digitação no LaTeX?).',
+        btn_return: 'Retornar à Home',
+        back_home: 'Voltar ao início',
     },
     en: {
         theme_toggle: 'Toggle Theme',
@@ -162,5 +168,11 @@ export const translations = {
         compiling_desc: 'Just like a good academic paper or robust code, this section is being developed with attention to detail. It will be available soon.',
         btn_home: 'Back to Home',
         btn_urgent: 'Need something urgent?',
+
+        // 404 Page
+        title_404: 'Page Not Found',
+        text_404: 'It seems the link you tried to access was moved, deleted, or never existed (maybe just a LaTeX typo?).',
+        btn_return: 'Return Home',
+        back_home: 'Back to home',
     },
 } as const
