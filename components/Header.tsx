@@ -2,12 +2,14 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { ThemeToggle } from './ThemeToggle'
 import { LanguageSwitch } from './LanguageSwitch'
 
 export function Header() {
     const { t } = useLanguage()
+    const pathname = usePathname()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     const toggleMobileMenu = () => {
@@ -18,11 +20,18 @@ export function Header() {
         setMobileMenuOpen(false)
     }
 
+    // Helper function to handle navigation links
+    // If we are on the homepage, use simple anchor links to scroll
+    // If we are on other pages (like 404), use absolute paths with anchors to redirect to homepage
+    const getNavLink = (hash: string) => {
+        return pathname === '/' ? hash : `/${hash}`
+    }
+
     return (
         <header className="fixed w-full top-0 z-50 bg-paper/95 dark:bg-slate-900/95 backdrop-blur border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
             <div className="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
                 <Link
-                    href="#"
+                    href="/"
                     className="font-serif text-2xl font-bold tracking-tight text-academic-blue dark:text-blue-400"
                 >
                     Matheus Lôbo<span className="text-gray-400">.</span>
@@ -31,13 +40,13 @@ export function Header() {
                 <div className="flex items-center gap-4 md:gap-6">
                     <nav className="hidden md:flex space-x-8 text-sm font-medium">
                         <Link
-                            href="#servicos"
+                            href={getNavLink('#servicos')}
                             className="hover:text-academic-blue dark:hover:text-blue-400 transition-colors"
                         >
                             {t('menu_services')}
                         </Link>
                         <Link
-                            href="#ferramentas"
+                            href={getNavLink('#ferramentas')}
                             className="hover:text-academic-blue dark:hover:text-blue-400 transition-colors"
                         >
                             {t('menu_tools')}
@@ -49,7 +58,7 @@ export function Header() {
                             {t('menu_blog')}
                         </Link>
                         <Link
-                            href="#fale-comigo"
+                            href={getNavLink('#fale-comigo')}
                             className="hover:text-academic-blue dark:hover:text-blue-400 transition-colors"
                         >
                             {t('menu_contact')}
@@ -90,14 +99,14 @@ export function Header() {
             >
                 <nav className="flex flex-col space-y-4 text-center">
                     <Link
-                        href="#servicos"
+                        href={getNavLink('#servicos')}
                         onClick={closeMobileMenu}
                         className="block py-2 text-gray-600 dark:text-gray-300 hover:text-academic-blue"
                     >
                         {t('menu_services')}
                     </Link>
                     <Link
-                        href="#ferramentas"
+                        href={getNavLink('#ferramentas')}
                         onClick={closeMobileMenu}
                         className="block py-2 text-gray-600 dark:text-gray-300 hover:text-academic-blue"
                     >
@@ -111,7 +120,7 @@ export function Header() {
                         {t('menu_blog')}
                     </Link>
                     <Link
-                        href="#fale-comigo"
+                        href={getNavLink('#fale-comigo')}
                         onClick={closeMobileMenu}
                         className="block py-2 text-gray-600 dark:text-gray-300 hover:text-academic-blue"
                     >
